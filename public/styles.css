@@ -1,4 +1,29 @@
-.test1 {
-  background-color: blue;
+.form{
+  
+}
+.login_page{
+  background: #88a4f3;
+  position:absolute;
+  left: 50%;
+  top: 50%;
 }
 
+.login__form{
+  padding: 0 10px 10px 10px;
+  
+}
+
+.login_content ::before, ::after{
+  display: none;
+}
+
+.login_content{
+  background: #ffff;
+  border-radius: 10px;
+ 
+}
+
+.button__login{
+  width: 250px;
+  
+}
