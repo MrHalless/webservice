@@ -56,7 +56,7 @@ app.use("/users", usersRoutes);
 app.use("/complexlog", complexLog);
 app.use("/unitlog", unitLog);
 app.use("/serverlog", serverLog);
-app.use("/loginpage", authRoutes);
+app.use("/login", authRoutes);
 
 async function start() {
   try {
