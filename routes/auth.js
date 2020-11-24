@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 
 router.get('/', (req, res) => {
-  res.render('loginpage', {
+  res.render('login', {
     layout: 'empty',
     title: 'Авторизация',
   });
