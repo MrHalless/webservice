@@ -1,89 +1,135 @@
 <div class="col-md-3 left_col">
   <div class="left_col scroll-view">
     <div class="navbar nav_title" style="border: 0">
-      <a href="/" class="site_title"
-        ><i class="fa fa-user-secret"></i> <span>ПЛО</span></a
+      <a class="site_title"
+        ><i class="fa fa-diamond" style="margin-left: 5px"></i>
+        <span>ПЛО</span></a
       >
     </div>
-
     <div class="clearfix"></div>
-
-    <br />
-
     <!-- sidebar menu -->
     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
       <div class="menu_section">
         <ul class="nav side-menu">
           <li>
-            <a href="/translate"><i class="fa fa-home"></i> Перевод слов </a>
-          </li>
-          <li>
-            <a href="/filehandling"
-              ><i class="fa fa-edit"></i> Обработка файлов
+            <a href="/translate"
+              ><i class="fa fa-language"></i> Перевод текста
             </a>
           </li>
           <li>
             <a
-              ><i class="fa fa-desktop"></i> Журналы
+              ><i class="fa fa-file-word-o"></i> Обработка файлов
+              <span class="fa fa-chevron-down"></span>
+            </a>
+            <ul class="nav child_menu">
+              <li><a href="/unitlog">Отправить на обработку</a></li>
+              <li><a href="#">Журнал АПК</a></li>
+              <li><a href="/complexlog">Журнал комплекса</a></li>
+              <li><a href="/unitlog">Журнал подразделения</a></li>
+              <li><a href="#">Мой журнал</a></li>
+              <li><a href="#">Статистика АПК</a></li>
+              <li><a href="#">Статистика комплекса</a></li>
+              <li><a href="#">Статистика подразделения</a></li>
+              <li><a href="#">Моя статистика</a></li>
+            </ul>
+          </li>
+          <li>
+            <a
+              ><i class="fa fa-clipboard"></i> Задачи
+              <span class="fa fa-chevron-down"></span>
+            </a>
+            <ul class="nav child_menu">
+              <li><a href="#">Задачи АПК</a></li>
+              <li><a href="#">Задачи комплекса</a></li>
+              <li><a href="#">Задачи подразделения</a></li>
+              <li><a href="#">Мои задачи</a></li>
+              <li><a href="#">Статистика АПК</a></li>
+              <li><a href="#">Статистика комплекса</a></li>
+              <li><a href="#">Статистика подразделения</a></li>
+              <li><a href="#">Моя статистика</a></li>
+            </ul>
+          </li>
+          <!-- <li>
+            <a href="/buildingcircuits"
+              ><i class="fa fa-code-fork"></i> Построение цепей
+            </a>
+          </li> -->
+          <li>
+            <a href="/chat"><i class="fa fa-comments-o"></i> Чат </a>
+          </li>
+          <li>
+            <a
+              ><i class="fa fa-globe"></i>ПМС
+              <span class="fa fa-chevron-down"></span>
+            </a>
+            <ul class="nav child_menu">
+              <li><a href="#">Приоритезация</a></li>
+              <li><a href="#">Статистика</a></li>
+            </ul>
+          </li>
+          <li>
+            <a
+              ><i class="fa fa-server"></i> Серверы
+              <span class="fa fa-chevron-down"></span>
+            </a>
+            <ul class="nav child_menu">
+              <li><a href="#">Управление сервером</a></li>
+              <li><a href="#">Цепи обработки</a></li>
+
+              <li><a href="#">Перенаправление обработки</a></li>
+            </ul>
+          </li>
+          <!-- <li>
+            <a
+              ><i class="fa fa-book"></i> Журналы
               <span class="fa fa-chevron-down"></span
             ></a>
             <ul class="nav child_menu">
-              <li><a href="/unitlog">Журнал подразделения</a></li>
               <li><a href="/complexlog">Журнал комплекса</a></li>
-              <li><a href="/serverlog">Журнал сервера</a></li>
+              <li><a href="/unitlog">Журнал подразделения</a></li>
+              <li><a href="">Мой журнал</a></li>
+            </ul>
+          </li> -->
+          <!-- <li>
+            <a href="/complexes"><i class="fa fa-cubes"></i> Комплексы </a>
+          </li>
+          <li>
+            <a href="/index"><i class="fa fa-star"></i> Поздразделение </a>
+          </li> -->
+
+          <!-- <li>
+            <a href="/accesscontrol"
+              ><i class="fa fa-object-ungroup"></i> Разграничение доступа
+            </a>
+          </li> -->
+          <li>
+            <a
+              ><i class="fa fa-sitemap"></i> Структура
+              <span class="fa fa-chevron-down"></span>
+            </a>
+            <ul class="nav child_menu">
+              <li><a href="#">Комплексы</a></li>
+              <li><a href="#">Подразделения</a></li>
+              <li><a href="#">Пользователи</a></li>
+              <li><a href="#">Разграничение доступа</a></li>
             </ul>
           </li>
-
-          {{#if isAuth}}
-
-          {{else}}
-          <li>
-            <a href="/complexes"><i class="fa fa-edit"></i> Комплексы </a>
-          </li>
-          <li>
-            <a href="/servers"><i class="fa fa-edit"></i> Сервера </a>
-          </li>
-          <li>
-            <a href="/accesscontrol"
-              ><i class="fa fa-edit"></i> Разграничение доступа
-            </a>
-          </li>
-          <li>
-            <a href="/users"><i class="fa fa-edit"></i> Пользователи </a>
-          </li>
-          <li>
+          <!-- <li>
             <a href="/synchronization"
-              ><i class="fa fa-edit"></i> Синхронизация
+              ><i class="fa fa-gears"></i> Проверка соединения
             </a>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a href="/laguagepairs"
-              ><i class="fa fa-edit"></i> Языковые пары
+              ><i class="fa fa-globe"></i> Языковые пары
             </a>
-          </li>
-          <li>
-            <a href="/pms"><i class="fa fa-edit"></i> СПО ПМС </a>
-          </li>
-          <li>
-            <a href="/tasks"><i class="fa fa-edit"></i> Задачи </a>
-          </li>
-          {{/if}}
-
-          <li>
-            <a href="/buildingcircuits"
-              ><i class="fa fa-edit"></i> Построение цепей
-            </a>
-          </li>
-          <li>
-            <a href="/chat"><i class="fa fa-edit"></i> Чат </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
     <!-- /sidebar menu -->
   </div>
 </div>
-
 <!-- top navigation -->
 <div class="top_nav">
   <div class="nav_menu">
@@ -101,18 +147,20 @@
             data-toggle="dropdown"
             aria-expanded="false"
           >
-            Сюда ставим ФИ
+            {{ login }}
           </a>
           <div
             class="dropdown-menu dropdown-usermenu pull-right"
             aria-labelledby="navbarDropdown"
           >
             <a class="dropdown-item" href="/"
+              ><i class="fa fa-gear pull-right"></i> Настройкиt</a
+            >
+            <a class="dropdown-item" href="/logout"
               ><i class="fa fa-sign-out pull-right"></i> Log Out</a
             >
           </div>
         </li>
-
         <li role="presentation" class="nav-item dropdown open">
           <a
             href="javascript:;"

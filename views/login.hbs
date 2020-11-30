@@ -1,47 +1,53 @@
+<body class="login_page">
+  <div class="login_wrapper">
+    <div class="animate form sss">
+      <section class="login_content">
+        <form class="login__form" method="POST">
+          <h1>Авторизация</h1>
 
+          {{#if error}}
+          <span class="alert">{{ error }}</span>
+          {{/if}}
 
-  <body class="login_page ">
-      <div class="login_wrapper">
-        <div class="animate form sss">
-          <section class="login_content">
-            <form class="login__form">
-              <h1>Авторизация </h1>
-              <div>
-                <input
-                  type="text"
-                  class="form-control "
-                  placeholder="Логин"
-                  required=""
-                />
-              </div>
-              <div>
-                <input
-                  type="password"
-                  class="form-control "
-                  placeholder="Пароль"
-                  required=""
-                />
-              </div>
-              <div>
-                <a class="btn btn-success  button__login" href="/">Войти</a>
-              </div>
+          <div>
+            <input
+              id="login"
+              name="login"
+              type="text"
+              class="form-control validate"
+              placeholder="Логин"
+              required
+            />
+          </div>
+          <div>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="form-control validate"
+              placeholder="Пароль"
+              required
+            />
+          </div>
+          <input type="hidden" name="_csrf" value="{{ csrf }}" />
+          <div>
+            <button class="btn btn-success button__login" type="submit">
+              Войти
+            </button>
+          </div>
 
-              <div class="clearfix"></div>
-
-            </form>
-          </section>
-        </div>
-      </div>
-
-<div>
-  <div class="hoja">
-    <span class="hoja__text">
-      АПК
-    </span>
+          <div class="clearfix"></div>
+        </form>
+      </section>
+    </div>
   </div>
-  <div class="text_logo">
-    <h1>АМЕЗИТ</h1>
+
+  <div>
+    <div class="hoja">
+      <span class="hoja__text"> АПК </span>
+    </div>
+    <div class="text_logo">
+      <h1>АМЕЗИТ</h1>
+    </div>
   </div>
-</div>
-      
-  </body>
+</body>

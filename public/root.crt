@@ -1,0 +1,54 @@
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number:
+            46:cf:8a:7c:9e:13:0c:bf:29:12:51:98:8c:51:77:77:b2:7f:c5:7d
+        Signature Algorithm: NULL
+        Issuer: CN = root.apkpsipb.vka
+        Validity
+            Not Before: Feb 19 06:27:53 2020 GMT
+            Not After : Feb 16 06:27:53 2030 GMT
+        Subject: CN = root.apkpsipb.vka
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:a8:2e:de:97:16:f2:9e:94:86:b2:88:de:29:a1:
+                    4e:c5:04:78:94:b7:33:94:3c:c1:84:4b:e1:97:ce:
+                    8a:d8:eb:86:0c:5f:49:eb:8b:ad:72:d8:d1:13:21:
+                    dc:24:ac:d4:66:32:ca:47:b5:72:20:a8:50:3d:92:
+                    19:0b:e5:44:29:b7:53:c8:cd:99:1d:f7:e4:15:ea:
+                    16:07:00:b2:91:27:cd:0f:89:74:e1:d4:13:7a:1e:
+                    40:f9:29:af:10:f4:8d:ab:8a:41:22:e2:c4:6e:05:
+                    3a:15:8e:87:43:5d:68:21:12:f5:62:58:1d:1f:85:
+                    56:ae:28:89:b0:50:b5:67:28:e3:ac:0b:1e:c6:82:
+                    fb:35:5d:87:ab:57:32:b6:9c:e7:8d:76:df:a1:bf:
+                    40:96:87:02:50:85:42:29:ac:2c:1d:9f:4f:03:bf:
+                    b9:2b:09:a6:6f:b1:2f:08:7b:b3:d3:f9:c2:55:0c:
+                    fb:53:7a:05:85:08:13:eb:2d:c5:d7:46:76:3e:bb:
+                    ee:14:da:89:b9:4a:79:07:43:a1:57:ec:2d:c6:d3:
+                    79:d7:b5:b9:dd:90:2e:b0:f5:b4:9e:ae:d3:16:61:
+                    5f:84:e1:b2:96:96:13:e0:be:7c:08:25:78:54:e4:
+                    95:9e:b3:65:a7:97:ea:15:13:08:ff:54:42:8b:3b:
+                    3d:19
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: NULL
+-----BEGIN CERTIFICATE-----
+MIIDGTCCAgGgAwIBAgIURs+KfJ4TDL8pElGYjFF3d7J/xX0wDQYJKoZIhvcNAQEL
+BQAwHDEaMBgGA1UEAwwRcm9vdC5hcGtwc2lwYi52a2EwHhcNMjAwMjE5MDYyNzUz
+WhcNMzAwMjE2MDYyNzUzWjAcMRowGAYDVQQDDBFyb290LmFwa3BzaXBiLnZrYTCC
+ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKgu3pcW8p6UhrKI3imhTsUE
+eJS3M5Q8wYRL4ZfOitjrhgxfSeuLrXLY0RMh3CSs1GYyyke1ciCoUD2SGQvlRCm3
+U8jNmR335BXqFgcAspEnzQ+JdOHUE3oeQPkprxD0jauKQSLixG4FOhWOh0NdaCES
+9WJYHR+FVq4oibBQtWco46wLHsaC+zVdh6tXMrac541236G/QJaHAlCFQimsLB2f
+TwO/uSsJpm+xLwh7s9P5wlUM+1N6BYUIE+stxddGdj677hTaiblKeQdDoVfsLcbT
+ede1ud2QLrD1tJ6u0xZhX4ThspaWE+C+fAgleFTklZ6zZaeX6hUTCP9UQos7PRkC
+AwEAAaNTMFEwHQYDVR0OBBYEFLbcmA38bKROmEpcn8pFZhGv4//gMB8GA1UdIwQY
+MBaAFLbcmA38bKROmEpcn8pFZhGv4//gMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZI
+hvcNAQELBQADggEBAGtSp/SOipM4ZfoshpEQViJKleq1gYbhmLY2YPi3mJh48GtQ
+ChifulWDDrWEQWf4Pb3r/uNa8DrXMAAK5rLiAjm7rCAmfG+yvOPSwr09FF9wmTzL
+U+ynrAUI9EoKGUP9g+vW4r4zPzBkloRQsRmY/TOhKghmHXC+l9hGsekrHmh5IyrT
+v5tY4Qn22TflH6kPO88ew1SZWDsAsK4G4Y3fDafTSD1DLo/tUmMzpXrd7vESn2u9
+wWaGoVk/Bo7hq7VA8i6T7pA7ZjLjDD9zwpwvC8KthRnBBD9PpgOMrKnEwuitd2lg
+GcSjj1Y8zVvY/6DyPxkqbXMM3LNlkXOi9Q4Zwb0=
+-----END CERTIFICATE-----

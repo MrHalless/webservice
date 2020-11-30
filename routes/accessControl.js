@@ -1,8 +1,8 @@
 const { Router } = require('express');
 const router = Router();
-const securityRoutes = require('../middleware/securityRoutes');
+const checkAuth = require('../middleware/checkAuth');
 
-router.get('/', securityRoutes, (req, res) => {
+router.get('/', checkAuth, (req, res) => {
   res.render('accesscontrol', {
     title: 'Главная страница',
   });

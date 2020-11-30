@@ -1,9 +1,10 @@
 const { Router } = require('express');
 const router = Router();
+const checkAuth = require('../middleware/checkAuth');
 
-router.get('/', (req, res) => {
+router.get('/', checkAuth, (req, res) => {
   res.render('pms', {
-    title: 'Главная страница',
+    title: 'Приоретизация ПМС',
   });
 });
 

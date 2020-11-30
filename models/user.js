@@ -29,6 +29,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  isAuthenticated: {
+    type: Boolean,
+    required: true,
+  },
   //   access: {
   //     type: String,
   //     required: true,
