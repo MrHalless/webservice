@@ -1,3 +1,5 @@
+// const { openModal } = require('../js/app');
+
 var modal = document.getElementById('myModal');
 
 var btn = document.getElementById('myBtn');

@@ -64,6 +64,7 @@ app.use(
     key: 'user_sid',
     resave: true,
     saveUninitialized: false,
+    unset: 'destroy',
     rolling: true,
     cookie: {
       maxAge: 30000,
@@ -72,6 +73,8 @@ app.use(
   }),
   function (req, res, next) {
     let num = req.session.cookie.maxAge;
+
+    // req.session.cookie.maxAge = null;
     console.log(num);
     next();
   }

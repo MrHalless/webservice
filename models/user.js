@@ -33,6 +33,11 @@ const userSchema = new Schema({
     type: Boolean,
     required: true,
   },
+  typeUser: {
+    type: String,
+    required: false,
+    enum: ['Admin', 'Operator', 'Pr'],
+  },
   //   access: {
   //     type: String,
   //     required: true,

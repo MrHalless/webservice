@@ -55,12 +55,16 @@ router.post('/', async (req, res) => {
   try {
     const { login, password } = req.body;
     const candidate = await User.findOne({ login });
+
     if (candidate) {
       const areSame = await bcrypt.compare(password, candidate.password);
       if (areSame) {
         req.session.user = candidate;
         req.session.isAuthenticated = true;
-        req.session.settings = false;
+        req.session.settings = true;
+        if (candidate.typeUser === 'Pr') {
+          req.session.cookie.maxAge = null;
+        }
         req.session.save((err) => {
           if (err) {
             throw err;
