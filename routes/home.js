@@ -7,6 +7,7 @@ router.get('/', checkAuth, (req, res) => {
     title: 'Главная страница',
     login: req.session.user.login,
     settings: req.session.settings,
+    success: req.flash('success'),
   });
 });
 

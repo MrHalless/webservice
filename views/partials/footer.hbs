@@ -1,7 +1,10 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/custom.min.js"></script>
+<script src="/js/toastr.min.js"></script>
+<script src="/js/tilt.jquery.min.js"></script>
 <script src="/js/app.js"></script>
+<<<<<<< Updated upstream
 <script src="/js/modal.js"></script>
 <script src="/js/jquery.dataTables.min.js"></script>
 <script src="/js/dataTables.bootstrap.min.js"></script>
@@ -14,5 +17,26 @@
 <script src="/js/dataTables.responsive.min.js"></script>
 <script src="/js/responsive.bootstrap.js"></script>
 <script src="/js/dataTables.scroller.min.js"></script>
+=======
+<script>
+    toastr.options.timeOut = 1500;
+    // toastr.options.progressBar = true;
+    toastr.options.closeButton = true;
+    // toastr.error('Логин уже существует', 'Ошибка')
+</script>
+{{#if error}}
+    <script>
+        toastr.error('{{error}}')
+    </script>
+{{/if}}
+{{#if success}}
+    <script>
+        toastr.success('{{success}}')
+    </script>
+{{/if}}
+{{#if settings}}
+    <scrip src="/js/modal.js"></scrip>
+{{/if}}
+>>>>>>> Stashed changes
 
 </html>
