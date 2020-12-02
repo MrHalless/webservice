@@ -5,6 +5,7 @@ const checkAuth = require('../middleware/checkAuth');
 router.get('/', checkAuth, (req, res) => {
   res.render('pms', {
     title: 'Приоретизация ПМС',
+    login: req.session.user.login,
   });
 });
 

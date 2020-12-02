@@ -7,6 +7,8 @@ const MongoStore = require('connect-mongodb-session')(session);
 const flash = require('connect-flash');
 const csrf = require('csurf');
 const fs = require('fs');
+const toastr = require('express-toastr');
+const cookieParser = require('cookie-parser');
 
 // ! custom routes
 const accessControlRoutes = require('./routes/accesscontrol');
@@ -27,6 +29,7 @@ const complexLog = require('./routes/complexLog');
 const unitLog = require('./routes/unitLog');
 const serverLog = require('./routes/serverLog');
 const authRoutes = require('./routes/auth');
+
 const varMiddleware = require('./middleware/variable');
 const keys = require('./keys/keys');
 const { MONGODB_URI } = require('./keys/keys');
@@ -58,6 +61,8 @@ app.set('views', 'views'); // ? регистрация views
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true })); // ? получение данных из body
 
+app.use(cookieParser('secret code dude'));
+
 app.use(
   session({
     secret: 'secret code dude',
@@ -67,7 +72,7 @@ app.use(
     unset: 'destroy',
     rolling: true,
     cookie: {
-      maxAge: 30000,
+      maxAge: 800000,
     },
     store,
   }),
@@ -83,7 +88,13 @@ app.use(
 // ! регистрация пакетов
 app.use(csrf());
 app.use(flash());
+// app.use(toastr());
 app.use(varMiddleware);
+
+// app.use(function (req, res, next) {
+
+//   next();
+// });
 
 // app.use(jquery);
 
@@ -106,7 +117,7 @@ app.use('/unitlog', unitLog);
 app.use('/serverlog', serverLog);
 app.use('/index', homeRoutes);
 app.use('/', authRoutes);
-app.use('/logout', authRoutes);
+// app.use('/logout', authRoutes);
 
 httpsOptions = {
   key: fs.readFileSync('./public/root.key'),

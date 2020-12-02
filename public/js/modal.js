@@ -30,8 +30,8 @@ let userIsActive = false;
 window.addEventListener('keypress', active);
 window.addEventListener('click', active);
 
-setInterval(checkUserIsActive, 2000);
-active();
+// setInterval(checkUserIsActive, 2000);
+// active();
 
 function checkUserIsActive() {
   if (userIsActive && new Date().getTime() - lastActiveTimestamp > timeout) {
