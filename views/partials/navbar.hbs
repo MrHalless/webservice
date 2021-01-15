@@ -1,28 +1,37 @@
 <div class="col-md-3 left_col">
   <div class="left_col scroll-view">
     <div class="navbar nav_title" style="border: 0">
-      <a class="site_title"><i class="fa fa-diamond" style="margin-left: 5px"></i>
-        <span>ПЛО</span></a>
+      <a class="site_title"
+        ><i class="fa fa-diamond" style="margin-left: 5px"></i>
+        <span>ПЛО</span></a
+      >
     </div>
     <div class="clearfix"></div>
     <!-- sidebar menu -->
-    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu menu_fixed">
+    <div
+      id="sidebar-menu"
+      class="main_menu_side hidden-print main_menu menu_fixed"
+    >
       <div class="menu_section">
         <ul class="nav side-menu">
           <li>
-            <a href="/translate"><i class="fa fa-language"></i> Перевод текста
+            <a href="/translate"
+              ><i class="fa fa-language"></i> Перевод текста
             </a>
           </li>
           <li>
-            <a><i class="fa fa-file-word-o"></i> Обработка файлов
+            <a
+              ><i class="fa fa-file-word-o"></i> Обработка файлов
               <span class="fa fa-chevron-down"></span>
             </a>
             <ul class="nav child_menu">
-              <li><a href="/unitlog">Отправить на обработку</a></li>
-              <li><a href="#">Журнал АПК</a></li>
-              <li><a href="/complexlog">Журнал комплекса</a></li>
-              <li><a href="/unitlog">Журнал подразделения</a></li>
-              <li><a href="#">Мой журнал</a></li>
+              <li><a href="/filehandling">Отправить на обработку</a></li>
+              <li><a href="/journal_apk">Журнал АПК</a></li>
+              <li><a href="/journal_complex">Журнал комплекса</a></li>
+              <li>
+                <a href="/journal_subdiv">Журнал подразделения</a>
+              </li>
+              <li><a href="/journal_operator">Мой журнал</a></li>
               <li><a href="#">Статистика АПК</a></li>
               <li><a href="#">Статистика комплекса</a></li>
               <li><a href="#">Статистика подразделения</a></li>
@@ -30,7 +39,8 @@
             </ul>
           </li>
           <li>
-            <a><i class="fa fa-clipboard"></i> Задачи
+            <a
+              ><i class="fa fa-clipboard"></i> Задачи
               <span class="fa fa-chevron-down"></span>
             </a>
             <ul class="nav child_menu">
@@ -53,16 +63,18 @@
             <a href="/chat"><i class="fa fa-comments-o"></i> Чат </a>
           </li>
           <li>
-            <a><i class="fa fa-globe"></i>ПМС
+            <a
+              ><i class="fa fa-globe"></i>ПМС
               <span class="fa fa-chevron-down"></span>
             </a>
             <ul class="nav child_menu">
-              <li><a href="#">Приоритезация</a></li>
-              <li><a href="#">Статистика</a></li>
+              <li><a href="/pms">Приоритезация</a></li>
+              <li><a href="/pms/statistic">Статистика</a></li>
             </ul>
           </li>
-          <li>
-            <a><i class="fa fa-server"></i> Серверы
+          <!-- <li>
+            <a
+              ><i class="fa fa-server"></i> Серверы
               <span class="fa fa-chevron-down"></span>
             </a>
             <ul class="nav child_menu">
@@ -70,7 +82,7 @@
               <li><a href="#">Цепи обработки</a></li>
               <li><a href="#">Перенаправление обработки</a></li>
             </ul>
-          </li>
+          </li> -->
           <!-- <li>
             <a
               ><i class="fa fa-book"></i> Журналы
@@ -94,14 +106,16 @@
             </a>
           </li> -->
           <li>
-            <a><i class="fa fa-sitemap"></i> Структура
+            <a
+              ><i class="fa fa-sitemap"></i> Структура
               <span class="fa fa-chevron-down"></span>
             </a>
             <ul class="nav child_menu">
-              <li><a href="#">Комплексы</a></li>
+              <li><a href="/complexes">Комплексы</a></li>
+              <li><a href="/servers">Серверы</a></li>
               <li><a href="#">Подразделения</a></li>
               <li><a href="/users">Пользователи</a></li>
-              <li><a href="#">Разграничение доступа</a></li>
+              <li><a href="/accesscontrol">Разграничение доступа</a></li>
             </ul>
           </li>
           <!-- <li>
@@ -123,33 +137,56 @@
 <!-- top navigation -->
 <div class="top_nav">
   <div class="nav_menu">
-    <div class="nav toggle">
+    <!-- <div class="nav toggle">
       <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-    </div>
+    </div> -->
     <nav class="nav navbar-nav">
       <ul class="navbar-right">
         <li class="nav-item dropdown open" style="padding-left: 15px">
-          <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
-            data-toggle="dropdown" aria-expanded="false">
+          <a
+            href="javascript:;"
+            class="user-profile dropdown-toggle"
+            aria-haspopup="true"
+            id="navbarDropdown"
+            data-toggle="dropdown"
+            aria-expanded="false"
+          >
             {{ login }}
           </a>
-          <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/"><i class="fa fa-gear pull-right"></i> Настройкиt</a>
-            <a class="dropdown-item" href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+          <div
+            class="dropdown-menu dropdown-usermenu pull-right"
+            aria-labelledby="navbarDropdown"
+          >
+            <a class="dropdown-item" href="/"
+              ><i class="fa fa-gear pull-right"></i> Настройкиt</a
+            >
+            <a class="dropdown-item" href="/logout"
+              ><i class="fa fa-sign-out pull-right"></i> Log Out</a
+            >
           </div>
         </li>
-        <li role="presentation" class="nav-item dropdown open">
-          <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown"
-            aria-expanded="false">
+        <!-- <li role="presentation" class="nav-item dropdown open">
+          <a
+            href="javascript:;"
+            class="dropdown-toggle info-number"
+            id="navbarDropdown1"
+            data-toggle="dropdown"
+            aria-expanded="false"
+          >
             <i class="fa fa-envelope-o"></i>
             <span class="badge bg-green">6</span>
           </a>
-          <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+          <ul
+            class="dropdown-menu list-unstyled msg_list"
+            role="menu"
+            aria-labelledby="navbarDropdown1"
+          >
             <li class="nav-item">
               <a class="dropdown-item">
                 <span class="image">
-                  <!-- <img src="images/img.jpg" alt="Profile Image" -->
-                  /></span>
+                  
+                  /></span
+                >
                 <span>
                   <span>John Smith</span>
                   <span class="time">3 mins ago</span>
@@ -163,8 +200,9 @@
             <li class="nav-item">
               <a class="dropdown-item">
                 <span class="image">
-                  <!-- <img src="images/img.jpg" alt="Profile Image" -->
-                  /></span>
+                  
+                  /></span
+                >
                 <span>
                   <span>John Smith</span>
                   <span class="time">3 mins ago</span>
@@ -178,8 +216,9 @@
             <li class="nav-item">
               <a class="dropdown-item">
                 <span class="image">
-                  <!-- <img src="images/img.jpg" alt="Profile Image" -->
-                  /></span>
+                  
+                  /></span
+                >
                 <span>
                   <span>John Smith</span>
                   <span class="time">3 mins ago</span>
@@ -193,8 +232,9 @@
             <li class="nav-item">
               <a class="dropdown-item">
                 <span class="image">
-                  <!-- <img src="images/img.jpg" alt="Profile Image" -->
-                  /></span>
+                  
+                  /></span
+                >
                 <span>
                   <span>John Smith</span>
                   <span class="time">3 mins ago</span>
@@ -214,7 +254,7 @@
               </div>
             </li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </div>

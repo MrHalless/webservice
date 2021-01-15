@@ -9,6 +9,7 @@ router.get('/', checkAuth, (req, res) => {
     settings: req.session.settings,
     success: req.flash('success'),
   });
+  console.log("11",req.ntlm)
 });
 
 router.post('/', checkAuth, (req, res) => {

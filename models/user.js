@@ -29,14 +29,30 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  isAuthenticated: {
-    type: Boolean,
-    required: true,
-  },
+  // isAuthenticated: {
+  //   type: Boolean,
+  //   required: true,
+  // },
   typeUser: {
     type: String,
     required: false,
-    enum: ['Admin', 'Operator', 'Pr'],
+    enum: [
+      'Админ АПК',
+      'Админ комплекса',
+      'Руководитель АПК',
+      'Руководитель комплекса',
+      'Руководитель подразделения',
+      'Оператор',
+    ],
+  },
+  templateName: {
+    type: String,
+    required: false,
+  },
+  typeAccount: {
+    type: String,
+    required: true,
+    enum: ['Доменная', 'Локальная'],
   },
   //   access: {
   //     type: String,

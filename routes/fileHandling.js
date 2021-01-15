@@ -4,8 +4,8 @@ const checkAuth = require('../middleware/checkAuth');
 
 router.get('/', checkAuth, (req, res) => {
   res.render('filehandling', {
-    title: 'Главная страница',
-    login: req.session.user.login,
+    title: 'Обработка файлов',
+    login: req.session.user,
   });
 });
 

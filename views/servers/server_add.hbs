@@ -1,0 +1,151 @@
+<div class="">
+  <!-- <div class="page-title">
+        <div class="title_left">
+          <h3>Добавление пользователя</h3>
+        </div>
+      </div> -->
+
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Добавление сервера</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <form class="" action="" method="POST">
+            <div class="col-md-12">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Наименование комплекса:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    class="form-control"
+                    id="complex"
+                    type="text"
+                    name="complex"
+                    required="required"
+                    placeholder="Введите комплекс"
+                  />
+                </div>
+              </div>
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Город:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    class="form-control"
+                    id="city"
+                    type="text"
+                    name="city"
+                    required="required"
+                    placeholder="Введите город"
+                  />
+                </div>
+              </div>
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Воинская часть:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    class="form-control"
+                    id="military"
+                    type="text"
+                    name="military"
+                    required="required"
+                    placeholder="Введите воинскую часть"
+                  />
+                </div>
+              </div>
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Наименование сервера:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    class="form-control"
+                    id="name"
+                    type="text"
+                    name="name"
+                    required="required"
+                    placeholder="Введите сервер"
+                  />
+                </div>
+              </div>
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >IP адрес:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    class="form-control"
+                    id="ip"
+                    type="text"
+                    name="ip"
+                    required="required"
+                    placeholder="Введите IP"
+                  />
+                </div>
+              </div>
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Порт:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    class="form-control"
+                    id="port"
+                    type="text"
+                    name="port"
+                    required="required"
+                    placeholder="Введите порт"
+                  />
+                </div>
+              </div>
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Доступные языки:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <select
+                    multiple
+                    name="languages"
+                    style="width: 100%"
+                    id="input_servers"
+                    class="form-control"
+                  >
+                    <option value="server1">server1</option>
+                    <option value="server2">server2</option>
+                    <option value="server3">server3</option>
+                    <option value="server4">server4</option>
+                    <option value="server5">server5</option>
+                    <option value="server6">server6</option>
+                    <option value="server7">server7</option>
+                    <option value="server8">server8</option>
+                  </select>
+                </div>
+              </div>
+
+              <input type="hidden" name="_csrf" value="{{ csrf }}" />
+              <div class="modal-footer" style="margin-bottom: -30px">
+                <div class="field form-group">
+                  <div class="col-md-12">
+                    <a href="/servers" class="btn btn-danger"> Отмена </a>
+
+                    <button type="submit" class="btn btn-success">
+                      Добавить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

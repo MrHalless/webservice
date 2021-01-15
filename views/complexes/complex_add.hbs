@@ -1,0 +1,78 @@
+<div class="">
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Добавление комплекса</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <form class="" action="" method="POST">
+            <div class="col-md-12">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Наименование комплекса:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    class="form-control"
+                    id="name"
+                    type="text"
+                    name="name"
+                    required="required"
+                    placeholder="Введите комплекс"
+                  />
+                </div>
+              </div>
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Город:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    class="form-control"
+                    id="city"
+                    type="text"
+                    name="city"
+                    required="required"
+                    placeholder="Введите город"
+                  />
+                </div>
+              </div>
+
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Войсковая часть:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    class="form-control"
+                    id="military"
+                    type="text"
+                    name="military"
+                    required="required"
+                    placeholder="Введите войсковую часть"
+                  />
+                </div>
+              </div>
+
+              <input type="hidden" name="_csrf" value="{{ csrf }}" />
+              <div class="modal-footer" style="margin-bottom: -30px">
+                <div class="field form-group">
+                  <div class="col-md-12">
+                    <a href="/complexes" class="btn btn-danger"> Отмена </a>
+
+                    <button type="submit" class="btn btn-success">
+                      Добавить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

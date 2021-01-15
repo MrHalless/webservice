@@ -1,40 +1,39 @@
 {{> head }}
 
-<body class="nav-md">
+<body class="nav-sm">
   <div class="container body">
     <div class="main_container">
       {{> navbar}}
-      <div class="right_col" role="main">
-        {{{body}}}
-      </div>
+      <div class="right_col" role="main">{{{body}}}</div>
       <!-- modal window -->
       <div class="modal" id="myModal">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title " id="" style="color: red;">
-                Внимание
-              </h4>
+              <h4 class="modal-title" id="" style="color: red">Внимание</h4>
               <!-- <button type="button" class="close" data-dismiss="modal">
               <span aria-hidden="true">×</span>
             </button> -->
             </div>
             <div class="modal-body">
               <h4>Подтвердите свою активность на сайте</h4>
-              <p>
-                Через минуту Вы будете перенаправлены на окно авторизации.
-              </p>
+              <p>Через минуту Вы будете перенаправлены на окно авторизации.</p>
             </div>
             <div class="modal-footer">
               <a id="activeUser">
-                <button type="button" class="btn btn-primary">Подтвердить</button>
+                <button type="button" class="btn btn-primary">
+                  Подтвердить
+                </button>
               </a>
             </div>
           </div>
         </div>
       </div>
       <!-- modal window -->
+      <footer>
+        <div class="clearfix"></div>
+      </footer>
     </div>
   </div>
+  {{> footer}}
 </body>
-{{> footer}}

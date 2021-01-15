@@ -14,22 +14,40 @@
           <div class="clearfix"></div>
         </div>
         <div class="x_content">
-          <form class="" action="" method="POST" novalidate="">
+          <form class="" action="" method="POST">
             <div class="col-md-12">
               <div class="field item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Тип аккаунта:<span class="required">*</span></label
+                  >Роль:<span class="required">*</span></label
                 >
                 <div class="col-md-6 col-sm-6">
                   <select
-                    name="typeUser"
+                    name="template"
                     style="width: 100%"
-                    id="typeUser"
+                    id="template"
                     class="form-control"
                   >
-                    <option value="Admin">Администратор</option>
-                    <option value="Operator">Оператор переводчик</option>
-                    <option value="Pr">Для презентации</option>
+                    {{#if access.length}}
+                    {{#each access}}
+                    <option value="{{ template }}">{{ name }}</option>
+                    {{/each}}
+                    {{/if}}
+                  </select>
+                </div>
+              </div>
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align"
+                  >Тип учетной записи:<span class="required">*</span></label
+                >
+                <div class="col-md-6 col-sm-6">
+                  <select
+                    name="typeAccount"
+                    style="width: 100%"
+                    id="typeAccount"
+                    class="form-control"
+                  >
+                    <option value="Локальная">Локальная</option>
+                    <option value="Доменная">Доменная</option>
                   </select>
                 </div>
               </div>

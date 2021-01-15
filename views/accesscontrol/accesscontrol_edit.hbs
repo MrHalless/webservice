@@ -1,0 +1,1598 @@
+<div class="">
+    <!-- <div class="page-title">
+            <div class="title_left">
+              <h3>Добавление пользователя</h3>
+            </div>
+          </div> -->
+  
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Изменение роли</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <form class="accesscontrolForm" action="" method="POST">
+              <div class="col-md-12">
+                <div class="field item form-group">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Наименование роли:<span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      class="form-control"
+                      id="name"
+                      type="text"
+                      name="name"
+                      placeholder="Введите роль"
+                      required="required"
+                      value="{{access.name}}"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="field item form-group">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Шаблон:<span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <select class="form-control selectAccess" name="template" readonly>
+                      {{#if (isAdminAPK access.template)}}
+                      <option selected value="AdminAPK">Админ АПК</option>
+                      {{/if}}
+                      {{#if (isAdminComplex access.template)}}
+                      <option selected  value="AdminComplex">Админ комплекса</option>
+                      {{/if}}
+                      {{#if (isRuckAPK access.template)}}
+                      <option selected  value="RuckAPK">Руководитель АПК</option>
+                      {{/if}}
+                      {{#if (isRuckComplex access.template)}}
+                      <option selected  value="RuckComplex">Руководитель комплекса</option>
+                      {{/if}}
+                      {{#if (isRuckSubdiv access.template)}}
+                      <option selected  value="RuckSubdiv">Руководитель подразделения</option>
+                      {{/if}}
+                      {{#if (isOperator access.template)}}
+                      <option selected  value="Operator">Оператор</option>
+                      {{/if}}
+                      
+                    </select>
+                  </div>
+                </div>
+  
+                
+                {{#if (isAdminAPK access.template)}}
+                <div class="field item dorm-group mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Перевод текста:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTranslate"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTranslate.flag}}
+                        />
+                        <span style="margin-left: 5px"> Перевод текста </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                    >Обработка файлов:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12 flex-column ">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewSendHandling"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewSendHandling.flag}}
+                        />
+                        <span style="margin-left: 5px"> Отправить на обаботку </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewJournalAPK"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewJournalAPK.flag}}
+                        />
+                        <span style="margin-left: 5px"> Журнал АПК </span>
+                      </div>
+                      
+                      
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewFileStatisticAPK"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewFileStatisticAPK.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика АПК </span>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                    >Задачи:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-start">
+                    <div class="row col-md-12 flex-column">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksAPK"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksAPK.flag}}
+                        />
+                        <span style="margin-left: 5px"> Задачи АПК </span>
+                      </div>
+                      
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksStatisticAPK"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksStatisticAPK.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика АПК </span>
+                      </div>
+                      
+                      
+  
+                    </div>
+                  </div>
+                </div>
+                <div class="field item dorm-group mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align "
+                    >Чат:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12 flex-column">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewChat"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewChat.flag}}
+                        />
+                        <span style="margin-left: 5px"> Чат </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="field item dorm-group mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                    >ПМС:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12 flex-column">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewPrioritizationPMS"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewPMS.viewPrioritizationPMS.flag}}
+                        />
+                        <span style="margin-left: 5px"> Приоритезация </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewStatisticPMS"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewPMS.viewStatisticPMS.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="field item dorm-group mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                    >Структура:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12 flex-column">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewComplexs"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewComplexs.flag}}
+                        />
+                        <span style="margin-left: 5px"> Комплексы </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewServers"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewServers.flag}}
+                        />
+                        <span style="margin-left: 5px"> Серверы </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewSubdivs"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewSubdivs.flag}}
+                        />
+                        <span style="margin-left: 5px"> Подразделения </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewUsers"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewUsers.flag}}
+                        />
+                        <span style="margin-left: 5px"> Пользователи </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewMatrix"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewMatrix.flag}}
+                        />
+                        <span style="margin-left: 5px"> Разграничение доступа </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {{/if}}
+              
+                {{#if (isAdminComplex access.template)}}
+                  <div class="field item dorm-group mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align"
+                      >Перевод текста:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                      <div class="row col-md-12">
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewTranslate"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewTranslate.flag}}
+                          />
+                          <span style="margin-left: 5px"> Перевод текста </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                      >Обработка файлов:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                      <div class="row col-md-12 flex-column ">
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewSendHandling"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewFileHandling.viewSendHandling.flag}}
+                          />
+                          <span style="margin-left: 5px"> Отправить на обаботку </span>
+                        </div>
+                        
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewJournalComplex"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewFileHandling.viewJournalComplex.flag}}
+                          />
+                          <span style="margin-left: 5px"> Журнал комплекса </span>
+                        </div>
+                        
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewFileStatisticComplex"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewFileHandling.viewFileStatisticComplex.flag}}
+                          />
+                          <span style="margin-left: 5px"> Статистика комплекса </span>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                      >Задачи:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-start">
+                      <div class="row col-md-12 flex-column">
+                        
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewTasksComplex"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewTasks.viewTasksComplex.flag}}
+                          />
+                          <span style="margin-left: 5px"> Задачи комплекса </span>
+                        </div>
+                        
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewTasksStatisticComplex"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewTasks.viewTasksStatisticComplex.flag}}
+                          />
+                          <span style="margin-left: 5px"> Статистика комплекса </span>
+                        </div>
+                        
+                        
+    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field item dorm-group mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align "
+                      >Чат:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                      <div class="row col-md-12 flex-column">
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewChat"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewChat.flag}}
+                          />
+                          <span style="margin-left: 5px"> Чат </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field item dorm-group mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                      >ПМС:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                      <div class="row col-md-12 flex-column">
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewPrioritizationPMS"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewPMS.viewPrioritizationPMS.flag}}
+                          />
+                          <span style="margin-left: 5px"> Приоритезация </span>
+                        </div>
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewStatisticPMS"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewPMS.viewStatisticPMS.flag}}
+                          />
+                          <span style="margin-left: 5px"> Статистика </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field item dorm-group mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                      >Структура:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                      <div class="row col-md-12 flex-column">
+                        
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewServers"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewStructure.viewServers.flag}}
+                          />
+                          <span style="margin-left: 5px"> Серверы </span>
+                        </div>
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewSubdivs"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewStructure.viewSubdivs.flag}}
+                          />
+                          <span style="margin-left: 5px"> Подразделения </span>
+                        </div>
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewUsers"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewStructure.viewUsers.flag}}
+                          />
+                          <span style="margin-left: 5px"> Пользователи </span>
+                        </div>
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewMatrix"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewStructure.viewMatrix.flag}}
+                          />
+                          <span style="margin-left: 5px"> Разграничение доступа </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {{/if}}
+  
+  
+                  {{#if (isRuckAPK access.template)}}
+                  <div class="field item dorm-group mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align"
+                      >Перевод текста:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                      <div class="row col-md-12">
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewTranslate"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewTranslate.flag}}
+                          />
+                          <span style="margin-left: 5px"> Перевод текста </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                      >Обработка файлов:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                      <div class="row col-md-12 flex-column ">
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewSendHandling"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewFileHandling.viewSendHandling.flag}}
+                          />
+                          <span style="margin-left: 5px"> Отправить на обаботку </span>
+                        </div>
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewJournalAPK"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewFileHandling.viewJournalAPK.flag}}
+                          />
+                          <span style="margin-left: 5px"> Журнал АПК </span>
+                        </div>
+                        
+                        <!--  -->
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewFileStatisticAPK"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewFileHandling.viewFileStatisticAPK.flag}}
+                          />
+                          <span style="margin-left: 5px"> Статистика АПК </span>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                      >Задачи:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-start">
+                      <div class="row col-md-12 flex-column">
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewTasksAPK"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewTasks.viewTasksAPK.flag}}
+                          />
+                          <span style="margin-left: 5px"> Задачи АПК </span>
+                        </div>
+                        
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewTasksStatisticAPK"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewTasks.viewTasksStatisticAPK.flag}}
+                          />
+                          <span style="margin-left: 5px"> Статистика АПК </span>
+                        </div>
+                        
+                        
+    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field item dorm-group mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align "
+                      >Чат:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                      <div class="row col-md-12 flex-column">
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewChat"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewChat.flag}}
+                          />
+                          <span style="margin-left: 5px"> Чат </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field item dorm-group mb-3">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                      >ПМС:</label
+                    >
+                    <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                      <div class="row col-md-12 flex-column">
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewPrioritizationPMS"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewPMS.viewPrioritizationPMS.flag}}
+                          />
+                          <span style="margin-left: 5px"> Приоритезация </span>
+                        </div>
+                        <div class="d-flex align-self-start">
+                          <input
+                            type="checkbox"
+                            class="flat"
+                            value="true"
+                            name="viewStatisticPMS"
+                            style="margin-top: 3px; width: 15px; height: 15px;"
+                            {{checked access.view.views.viewPMS.viewStatisticPMS.flag}}
+                          />
+                          <span style="margin-left: 5px"> Статистика </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {{/if}}
+  
+                  {{#if (isRuckComplex access.template)}}
+                    <div class="field item dorm-group mb-3">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align"
+                        >Перевод текста:</label
+                      >
+                      <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                        <div class="row col-md-12">
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewTranslate"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewTranslate.flag}}
+                            />
+                            <span style="margin-left: 5px"> Перевод текста </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                    <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                        >Обработка файлов:</label
+                      >
+                      <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                        <div class="row col-md-12 flex-column ">
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewSendHandling"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewFileHandling.viewSendHandling.flag}}
+                            />
+                            <span style="margin-left: 5px"> Отправить на обаботку </span>
+                          </div>
+                          
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewJournalComplex"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewFileHandling.viewJournalComplex.flag}}
+                            />
+                            <span style="margin-left: 5px"> Журнал комплекса </span>
+                          </div>
+                          
+                          
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewFileStatisticComplex"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewFileHandling.viewFileStatisticComplex.flag}}
+                            />
+                            <span style="margin-left: 5px"> Статистика комплекса </span>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                        >Задачи:</label
+                      >
+                      <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-start">
+                        <div class="row col-md-12 flex-column">
+                          
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewTasksComplex"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewTasks.viewTasksComplex.flag}}
+                            />
+                            <span style="margin-left: 5px"> Задачи комплекса </span>
+                          </div>
+                          
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewTasksStatisticComplex"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewTasks.viewTasksStatisticComplex.flag}}
+                            />
+                            <span style="margin-left: 5px"> Статистика комплекса </span>
+                          </div>
+                          
+                          
+      
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field item dorm-group mb-3">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align "
+                        >Чат:</label
+                      >
+                      <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                        <div class="row col-md-12 flex-column">
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewChat"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewChat.flag}}
+                            />
+                            <span style="margin-left: 5px"> Чат </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {{/if}}
+  
+                    {{#if (isRuckSubdiv access.template)}}
+                      <div class="field item dorm-group mb-3">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align"
+                          >Перевод текста:</label
+                        >
+                        <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                          <div class="row col-md-12">
+                            <div class="d-flex align-self-start">
+                              <input
+                                type="checkbox"
+                                class="flat"
+                                value="true"
+                                name="viewTranslate"
+                                style="margin-top: 3px; width: 15px; height: 15px;"
+                                {{checked access.view.views.viewTranslate.flag}}
+                              />
+                              <span style="margin-left: 5px"> Перевод текста </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      
+                      <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                          >Обработка файлов:</label
+                        >
+                        <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                          <div class="row col-md-12 flex-column ">
+                            <div class="d-flex align-self-start">
+                              <input
+                                type="checkbox"
+                                class="flat"
+                                value="true"
+                                name="viewSendHandling"
+                                style="margin-top: 3px; width: 15px; height: 15px;"
+                                {{checked access.view.views.viewFileHandling.viewSendHandling.flag}}
+                              />
+                              <span style="margin-left: 5px"> Отправить на обаботку </span>
+                            </div>
+                            
+                            <div class="d-flex align-self-start">
+                              <input
+                                type="checkbox"
+                                class="flat"
+                                value="true"
+                                name="viewJournalSubdiv"
+                                style="margin-top: 3px; width: 15px; height: 15px;"
+                                {{checked access.view.views.viewFileHandling.viewJournalSubdiv.flag}}
+                              />
+                              <span style="margin-left: 5px"> Журнал подразделения </span>
+                            </div>
+                            
+                            <div class="d-flex align-self-start">
+                              <input
+                                type="checkbox"
+                                class="flat"
+                                value="true"
+                                name="viewFileStatisticSubdiv"
+                                style="margin-top: 3px; width: 15px; height: 15px;"
+                                {{checked access.view.views.viewFileHandling.viewFileStatisticSubdiv.flag}}
+                              />
+                              <span style="margin-left: 5px"> Статистика подразделения </span>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                          >Задачи:</label
+                        >
+                        <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-start">
+                          <div class="row col-md-12 flex-column">
+                            
+                            <div class="d-flex align-self-start">
+                              <input
+                                type="checkbox"
+                                class="flat"
+                                value="true"
+                                name="viewTasksSubdiv"
+                                style="margin-top: 3px; width: 15px; height: 15px;"
+                                {{checked access.view.views.viewTasks.viewTasksSubdiv.flag}}
+                              />
+                              <span style="margin-left: 5px"> Задачи подразделения </span>
+                            </div>
+                           
+                            <div class="d-flex align-self-start">
+                              <input
+                                type="checkbox"
+                                class="flat"
+                                value="true"
+                                name="viewTasksStatisticSubdiv"
+                                style="margin-top: 3px; width: 15px; height: 15px;"
+                                {{checked access.view.views.viewTasks.viewTasksStatisticSubdiv.flag}}
+                              />
+                              <span style="margin-left: 5px"> Статистика подразделения </span>
+                            </div>
+                           
+                            
+        
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field item dorm-group mb-3">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align "
+                          >Чат:</label
+                        >
+                        <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                          <div class="row col-md-12 flex-column">
+                            <div class="d-flex align-self-start">
+                              <input
+                                type="checkbox"
+                                class="flat"
+                                value="true"
+                                name="viewChat"
+                                style="margin-top: 3px; width: 15px; height: 15px;"
+                                {{checked access.view.views.viewChat.flag}}
+                              />
+                              <span style="margin-left: 5px"> Чат </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {{/if}}
+  
+                      {{#if (isOperator access.template)}}
+                        <div class="field item dorm-group mb-3">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align"
+                            >Перевод текста:</label
+                          >
+                          <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                            <div class="row col-md-12">
+                              <div class="d-flex align-self-start">
+                                <input
+                                  type="checkbox"
+                                  class="flat"
+                                  value="true"
+                                  name="viewTranslate"
+                                  style="margin-top: 3px; width: 15px; height: 15px;"
+                                  {{checked access.view.views.viewTranslate.flag}}
+                                />
+                                <span style="margin-left: 5px"> Перевод текста </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                            >Обработка файлов:</label
+                          >
+                          <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                            <div class="row col-md-12 flex-column ">
+                              <div class="d-flex align-self-start">
+                                <input
+                                  type="checkbox"
+                                  class="flat"
+                                  value="true"
+                                  name="viewSendHandling"
+                                  style="margin-top: 3px; width: 15px; height: 15px;"
+                                  {{checked access.view.views.viewFileHandling.viewSendHandling.flag}}
+                                />
+                                <span style="margin-left: 5px"> Отправить на обаботку </span>
+                              </div>
+                              
+                              <div class="d-flex align-self-start">
+                                <input
+                                  type="checkbox"
+                                  class="flat"
+                                  value="true"
+                                  name="viewJournalOperator"
+                                  style="margin-top: 3px; width: 15px; height: 15px;"
+                                  {{checked access.view.views.viewFileHandling.viewJournalOperator.flag}}
+                                />
+                                <span style="margin-left: 5px"> Мой журнал </span>
+                              </div>
+                              <!--  -->
+                              
+                              <div class="d-flex align-self-start">
+                                <input
+                                  type="checkbox"
+                                  class="flat"
+                                  value="true"
+                                  name="viewFileStatisticOperator"
+                                  style="margin-top: 3px; width: 15px; height: 15px;"
+                                  {{checked access.view.views.viewFileHandling.viewFileStatisticOperator.flag}}
+                                />
+                                <span style="margin-left: 5px"> Моя статистика </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                            >Задачи:</label
+                          >
+                          <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-start">
+                            <div class="row col-md-12 flex-column">
+                              
+                              <div class="d-flex align-self-start">
+                                <input
+                                  type="checkbox"
+                                  class="flat"
+                                  value="true"
+                                  name="viewTasksOperator"
+                                  style="margin-top: 3px; width: 15px; height: 15px;"
+                                  {{checked access.view.views.viewTasks.viewTasksOperator.flag}}
+                                />
+                                <span style="margin-left: 5px"> Мои задачи </span>
+                              </div>
+                              
+                              <div class="d-flex align-self-start">
+                                <input
+                                  type="checkbox"
+                                  class="flat"
+                                  value="true"
+                                  name="viewTasksStatisticOperator"
+                                  style="margin-top: 3px; width: 15px; height: 15px;"
+                                  {{checked access.view.views.viewTasks.viewTasksStatisticOperator.flag}}
+                                />
+                                <span style="margin-left: 5px"> Моя статистика </span>
+                              </div>
+                              
+          
+                            </div>
+                          </div>
+                        </div>
+                        <div class="field item dorm-group mb-3">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align "
+                            >Чат:</label
+                          >
+                          <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                            <div class="row col-md-12 flex-column">
+                              <div class="d-flex align-self-start">
+                                <input
+                                  type="checkbox"
+                                  class="flat"
+                                  value="true"
+                                  name="viewChat"
+                                  style="margin-top: 3px; width: 15px; height: 15px;"
+                                  {{checked access.view.views.viewChat.flag}}
+                                />
+                                <span style="margin-left: 5px"> Чат </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {{/if}}
+
+                </div>
+
+<!--
+              <div class="col-md-12">
+                <div class="field item form-group">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Наименование роли:<span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      class="form-control"
+                      id="name"
+                      type="text"
+                      name="name"
+                      placeholder="Введите роль"
+                      required="required"
+                      value="{{access.name}}"
+                      readonly="readonly"
+                    />
+                  </div>
+                </div>
+                <div class="field item dorm-group mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Перевод текста:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTranslate"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTranslate.flag}}
+                        />
+                        <span style="margin-left: 5px"> Перевод текста </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                    >Обработка файлов:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12 flex-column ">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewSendHandling"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewSendHandling.flag}}
+                        />
+                        <span style="margin-left: 5px"> Отправить на обаботку </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewJournalAPK"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewJournalAPK.flag}}
+                        />
+                        <span style="margin-left: 5px"> Журнал АПК </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewJournalComplex"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewJournalComplex.flag}}
+                        />
+                        <span style="margin-left: 5px"> Журнал комплекса </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewJournalSubdiv"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewJournalSubdiv.flag}}
+                        />
+                        <span style="margin-left: 5px"> Журнал подразделения </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewJournalOperator"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewJournalOperator.flag}}
+                        />
+                        <span style="margin-left: 5px"> Мой журнал </span>
+                      </div>
+                      
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewFileStatisticAPK"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewFileStatisticAPK.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика АПК </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewFileStatisticComplex"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewFileStatisticComplex.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика комплекса </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewFileStatisticSubdiv"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewFileStatisticSubdiv.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика подразделения </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewFileStatisticOperator"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewFileHandling.viewFileStatisticOperator.flag}}
+                        />
+                        <span style="margin-left: 5px"> Моя статистика </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="field item dorm-group d-flex justify-content-start align-self-start mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                    >Задачи:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-start">
+                    <div class="row col-md-12 flex-column">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksAPK"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksAPK.flag}}
+                        />
+                        <span style="margin-left: 5px"> Задачи АПК </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksComplex"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksComplex.flag}}
+                        />
+                        <span style="margin-left: 5px"> Задачи комплекса </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksSubdiv"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksSubdiv.flag}}
+                        />
+                        <span style="margin-left: 5px"> Задачи подразделения </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksOperator"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksOperator.flag}}
+                        />
+                        <span style="margin-left: 5px"> Мои задачи </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksStatisticAPK"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksStatisticAPK.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика АПК </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksStatisticComplex"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksStatisticComplex.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика комплекса </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksStatisticSubdiv"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksStatisticSubdiv.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика подразделения </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewTasksStatisticOperator"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewTasks.viewTasksStatisticOperator.flag}}
+                        />
+                        <span style="margin-left: 5px"> Моя статистика </span>
+                      </div>
+                      
+  
+                    </div>
+                  </div>
+                </div>
+                <div class="field item dorm-group mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align "
+                    >Чат:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12 flex-column">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewChat"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewChat.flag}}
+                        />
+                        <span style="margin-left: 5px"> Чат </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="field item dorm-group mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                    >ПМС:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12 flex-column">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewPrioritizationPMS"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewPMS.viewPrioritizationPMS.flag}}
+                        />
+                        <span style="margin-left: 5px"> Приоритезация </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewStatisticPMS"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewPMS.viewStatisticPMS.flag}}
+                        />
+                        <span style="margin-left: 5px"> Статистика </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="field item dorm-group mb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align pt-0"
+                    >Структура:</label
+                  >
+                  <div class="col-md-6 col-sm-6 d-flex justify-content-start align-self-center">
+                    <div class="row col-md-12 flex-column">
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewComplexs"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewComplexs.flag}}
+                        />
+                        <span style="margin-left: 5px"> Комплексы </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewServers"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewServers.flag}}
+                        />
+                        <span style="margin-left: 5px"> Серверы </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewSubdivs"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewSubdivs.flag}}
+                        />
+                        <span style="margin-left: 5px"> Подразделения </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewUsers"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewUsers.flag}}
+                        />
+                        <span style="margin-left: 5px"> Пользователи </span>
+                      </div>
+                      <div class="d-flex align-self-start">
+                        <input
+                          type="checkbox"
+                          class="flat"
+                          value="true"
+                          name="viewMatrix"
+                          style="margin-top: 3px; width: 15px; height: 15px;"
+                          {{checked access.view.views.viewStructure.viewMatrix.flag}}
+                        />
+                        <span style="margin-left: 5px"> Разграничение доступа </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              
+                
+                </div>
+              -->
+              <!-- <div class="col-md-12">
+                <div class="field item form-group">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Наименование роли:<span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      class="form-control"
+                      id="name"
+                      type="text"
+                      name="name"
+                      required="required"
+                      placeholder="Введите роль"
+                      value="{{access.name}}"
+                      readonly='readonly'
+                    />
+                  </div>
+                </div>
+                <div class="field item form-group">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Доступные права:<span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <div
+                      class=""
+                      style="
+                        height: 200px;
+                        border: 2px solid #e6e9ed;
+                        box-shadow: 0 5px 10px #ede6e6;
+                        margin-bottom: 20px;
+                        
+                      "
+                    >
+                      
+                      <div
+                        class="col-md-6 d-flex justify-content-start"
+                        style="height: inherit; padding-left: 30px;"
+                      >
+                        <div
+                          class="d-flex flex-column justify-content-around"
+                          style="height: inherit; padding-bottom: 5px;"
+                        >
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewMonitoring"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewMonitoring.flag}}
+                            />
+                            <span style="margin-left: 5px"> Мониторинг серверов </span>
+                          </div>
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              value="true"
+                              class="flat"
+                              name="viewUsers"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewUsers.flag}}
+                            />
+                            <span style="margin-left: 5px"> Пользователи </span>
+                          </div>
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewPms"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewPms.flag}}
+                            />
+                            <span style="margin-left: 5px"> ПМС </span>
+                          </div>
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewComplex"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewComplex.flag}}
+                            />
+                            <span style="margin-left: 5px"> Добавление комплекса </span>
+                          </div>
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewTasks"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewTasks.flag}}
+                            />
+                            <span style="margin-left: 5px"> Постановка задач </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col-md-6 d-flex justify-content-center"
+                        style="height: inherit"
+                      >
+                        <div
+                          class="d-flex flex-column justify-content-around"
+                          style="height: inherit; padding-bottom: 5px;"
+                        >
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewLanguages"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewLanguages.flag}}
+                            />
+                            <span style="margin-left: 5px"> Языковой профиль </span>
+                          </div>
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewAccess"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewAccess.flag}}
+                            />
+                            <span style="margin-left: 5px"> Матрица разграничения прав доступа</span>
+                          </div>
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewServer"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewServer.flag}}
+                            />
+                            <span style="margin-left: 5px"> Добавление сервера </span>
+                          </div>
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewChain"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewChain.flag}}
+                            />
+                            <span style="margin-left: 5px"> Построение цепей </span>
+                          </div>
+                          <div class="d-flex align-self-start">
+                            <input
+                              type="checkbox"
+                              class="flat"
+                              value="true"
+                              name="viewSynchronization"
+                              style="margin-top: 3px; width: 15px; height: 15px;"
+                              {{checked access.view.views.viewSynchronization.flag}}
+                            />
+                            <span style="margin-left: 5px"> Синхронизация </span>
+                          </div>
+                        </div>
+                      </div>
+  
+                      
+                    </div>
+                  </div>
+                </div>
+                
+                </div> -->
+  
+                <input type="hidden" name="_csrf" value="{{ csrf }}" />
+                <div class="modal-footer" style="margin-bottom: -30px">
+                  <div class="field form-group">
+                    <div class="col-md-12">
+                      <a href="/accesscontrol" class="btn btn-danger"> Отмена </a>
+  
+                      <button type="submit" class="btn btn-success accesscontrol_btn">
+                        Изменить
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

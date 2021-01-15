@@ -1,0 +1,137 @@
+<div class="">
+  <!-- <div class="page-title">
+            <div class="title_left">
+              <h3>Добавление пользователя</h3>
+            </div>
+          </div> -->
+
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Связывание доменной учетной записи</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          {{#if find}}
+          <form class="accesscontrolForm" action="untieuser" method="POST">
+            <div class="col-md-12">
+              <div class="field item form-group pt-3 pb-3">
+                <label class="col-form-label col-md-2 col-sm-2 label-align"
+                  >Учетная запись в Active Directory:<span class="required"
+                    >*</span
+                  ></label
+                >
+                <div class="col-md-3 col-sm-3">
+                  <select
+                    name="userDomain"
+                    style="width: 100%"
+                    id="userDomain"
+                    class="form-control"
+                  >
+                    <option value="{{ find.userDomain }}">
+                      {{ findName }}
+                    </option>
+                  </select>
+                </div>
+                <label class="col-form-label col-md-2 col-sm-2 label-align"
+                  >Доменная учетная запись в ПЛО:<span class="required"
+                    >*</span
+                  ></label
+                >
+                <div class="col-md-3 col-sm-3">
+                  <select
+                    name="userLocal"
+                    style="width: 100%"
+                    id="userLocal"
+                    class="form-control"
+                  >
+                    <option value="{{ findUserLocal.login }}">
+                      {{ findUserLocal.login }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <input type="hidden" name="_csrf" value="{{ csrf }}" />
+              <div class="modal-footer" style="margin-bottom: -30px">
+                <div class="field form-group">
+                  <div class="col-md-12">
+                    <a href="/users" class="btn btn-danger"> Отмена </a>
+
+                    <button
+                      type="submit"
+                      class="btn btn-dark accesscontrol_btn"
+                    >
+                      Отвязать
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          {{else}}
+          <form class="accesscontrolForm" action="binduser" method="POST">
+            <div class="col-md-12">
+              <div class="field item form-group pt-3 pb-3">
+                <label class="col-form-label col-md-2 col-sm-2 label-align"
+                  >Учетная запись в Active Directory:<span class="required"
+                    >*</span
+                  ></label
+                >
+
+                <div class="col-md-3 col-sm-3">
+                  <select
+                    name="userDomain"
+                    style="width: 100%"
+                    id="userDomain"
+                    class="form-control"
+                  >
+                    <option></option>
+
+                    {{#eachInMap map}}
+                    <option value="{{ value }}">{{ key }}</option>
+                    {{/eachInMap}}
+                  </select>
+                </div>
+                <label class="col-form-label col-md-2 col-sm-2 label-align"
+                  >Доменная учетная запись в ПЛО:<span class="required"
+                    >*</span
+                  ></label
+                >
+                <div class="col-md-3 col-sm-3">
+                  <select
+                    name="userLocal"
+                    style="width: 100%"
+                    id="userLocal"
+                    class="form-control"
+                  >
+                    <option value="{{ findUserLocal.login }}">
+                      {{ findUserLocal.login }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <input type="hidden" name="_csrf" value="{{ csrf }}" />
+              <div class="modal-footer" style="margin-bottom: -30px">
+                <div class="field form-group">
+                  <div class="col-md-12">
+                    <a href="/users" class="btn btn-danger"> Отмена </a>
+
+                    <button
+                      type="submit"
+                      class="btn btn-success accesscontrol_btn"
+                    >
+                      Привязать
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
