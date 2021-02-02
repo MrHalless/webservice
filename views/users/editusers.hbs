@@ -1,0 +1,154 @@
+<div class="col-md-12 col-sm-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <h1>Редактирование пользователя</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <div class="container-fluid">
+        <form class="" action="" method="POST">
+          <div class="col-md-12" style="background-color: #FFF;">
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Фамилия<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="surname" type="text" name="surname" required="required"
+                  placeholder="Введите фамилию" value="{{user.surname}}" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Имя<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="name" type="text" name="name" required="required"
+                  placeholder="Введите имя" value="{{user.name}}" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Отчество<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="patronymic" type="text" name="patronymic" required="required"
+                  placeholder="Введите отчество" value="{{user.patronymic}}" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-2 col-sm-2 label-align" ">Роль:<span
+                  class=" required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="template" style="width: 100%" id="template" class="form-control">
+                  {{#if access.length}}
+                    {{#each access}}
+                      {{#if (checkRole @root.templateCheck name )}}
+                        <option selected value="{{ template }}">{{ name }}</option>
+                      {{else}}
+                        <option value="{{ template }}">{{ name }}</option>
+                      {{/if}}
+                    {{/each}}
+                  {{/if}}
+                </select>
+                <!-- {{#if ListAccessControl.length}}
+                  {{#each}}
+                    <input class="form-control" id="templateName" type="text" name="templateName" required="required"
+                      value="{{ name }}" />
+                  {{/each}}
+                {{/if}}
+                <!-- <input class="form-control" id="templateName" type="text" name="templateName" required="required"
+                  value="{{ user.templateName }}" /> -->
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Тип учетной записи:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="typeAccount" style="width: 100%" id="typeAccount" class="form-control">
+                  {{#if (checkDomainUser user.typeAccount)}}
+                    <option selected value="Доменная">Доменная</option>
+                    <option value="Локальная">Локальная</option>
+                  {{else}}
+                    <option selected value="Локальная">Локальная</option>
+                    <option value="Доменная">Доменная</option>
+                  {{/if}}
+                </select>
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Логин<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="login" type="text" name="login" required="required"
+                  placeholder="Введите логин" value="{{user.login}}" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Пароль<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" type="password" id="password" name="password" placeholder="Введите пароль"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*]).{8,}"
+                  title="Минимум 8 символов, включая заглавные и строчные буквы, цифры и уникальный символ" required=""
+                  value="{{user.password}}" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Город:<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="city" style="width: 100%" id="user_edit_city" class="form-control">
+                  <option value="{{ user.city  }}">{{ user.city }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Комплекс:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="complex" style="width: 100%" id="user_edit_complex" class="form-control">
+                  <option value="{{ user.complex  }}">{{ user.complex }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="row " style="padding-top: 15px;">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-2 col-sm-2 label-align">Подразделение:<span
+                    class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <select name="subdiv" style="width: 100%" id="user_edit_subdiv" class="form-control">
+                    <option value="{{ user.subdiv  }}">{{ user.subdiv }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row " style="padding-top: 15px;">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-2 col-sm-2 label-align">Серверы:<span
+                    class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <select multiple name="servers" style="width: 100%; height: inherit;" id="user_edit_servers"
+                    class="form-control" required>
+                    {{#each user.servers}}
+                      <option selected value="{{ name  }}">{{ name  }}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row " style="padding-top: 15px; padding-bottom: 15px;">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-2 col-sm-2 label-align">Языковые пары:<span
+                    class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <div class="container" name="tree" id="userTree"></div>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="pairs" id="editPairs" value="" />
+            <input type="hidden" name="_csrf" value="{{ csrf }}" />
+            <div class="field form-group" style="float: right; padding-top: 15px;">
+              <div class="col-md-12" style="padding-right: 0 !important;">
+                <a href="/users" class="btn btn-danger"> Отмена </a>
+                <button type="submit" class="btn btn-success" id="editUserButton">Сохранить
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

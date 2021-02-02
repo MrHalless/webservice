@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 const checkAuth = require('../middleware/checkAuth');
+const { checkAccess } = require('../middleware/checkAccess');
 
 router.get('/', checkAuth, (req, res) => {
   res.render('index', {
@@ -9,6 +10,7 @@ router.get('/', checkAuth, (req, res) => {
     settings: req.session.settings,
     success: req.flash('success'),
   });
+  console.log("11", req.ntlm)
 });
 
 router.post('/', checkAuth, (req, res) => {

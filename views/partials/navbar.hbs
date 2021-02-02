@@ -1,222 +1,452 @@
-<div class="col-md-3 left_col">
-  <div class="left_col scroll-view">
-    <div class="navbar nav_title" style="border: 0">
-      <a class="site_title"><i class="fa fa-diamond" style="margin-left: 5px"></i>
-        <span>ПЛО</span></a>
+<div class="TopNavbar header navbar navbar-default navbar-fixed-top">
+  <div class="header navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header col-md-8">
+      <a href="/translate" class="">
+        <div alt="" class="navbar-logo"></div>
+        <span class="logo-repeat"><strong>ПЛО</strong></span>
+      </a>
+      <button type="button" class="navbar-toggle" data-click="top-menu-toggled">
+        <!-- <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> -->
+      </button>
     </div>
-    <div class="clearfix"></div>
-    <!-- sidebar menu -->
-    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu menu_fixed">
-      <div class="menu_section">
-        <ul class="nav side-menu">
-          <li>
-            <a href="/translate"><i class="fa fa-language"></i> Перевод текста
-            </a>
-          </li>
-          <li>
-            <a><i class="fa fa-file-word-o"></i> Обработка файлов
-              <span class="fa fa-chevron-down"></span>
-            </a>
-            <ul class="nav child_menu">
-              <li><a href="/unitlog">Отправить на обработку</a></li>
-              <li><a href="#">Журнал АПК</a></li>
-              <li><a href="/complexlog">Журнал комплекса</a></li>
-              <li><a href="/unitlog">Журнал подразделения</a></li>
-              <li><a href="#">Мой журнал</a></li>
-              <li><a href="#">Статистика АПК</a></li>
-              <li><a href="#">Статистика комплекса</a></li>
-              <li><a href="#">Статистика подразделения</a></li>
-              <li><a href="#">Моя статистика</a></li>
-            </ul>
-          </li>
-          <li>
-            <a><i class="fa fa-clipboard"></i> Задачи
-              <span class="fa fa-chevron-down"></span>
-            </a>
-            <ul class="nav child_menu">
-              <li><a href="#">Задачи АПК</a></li>
-              <li><a href="#">Задачи комплекса</a></li>
-              <li><a href="#">Задачи подразделения</a></li>
-              <li><a href="#">Мои задачи</a></li>
-              <li><a href="#">Статистика АПК</a></li>
-              <li><a href="#">Статистика комплекса</a></li>
-              <li><a href="#">Статистика подразделения</a></li>
-              <li><a href="#">Моя статистика</a></li>
-            </ul>
-          </li>
-          <!-- <li>
-            <a href="/buildingcircuits"
-              ><i class="fa fa-code-fork"></i> Построение цепей
-            </a>
-          </li> -->
-          <li>
-            <a href="/chat"><i class="fa fa-comments-o"></i> Чат </a>
-          </li>
-          <li>
-            <a><i class="fa fa-globe"></i>ПМС
-              <span class="fa fa-chevron-down"></span>
-            </a>
-            <ul class="nav child_menu">
-              <li><a href="#">Приоритезация</a></li>
-              <li><a href="#">Статистика</a></li>
-            </ul>
-          </li>
-          <li>
-            <a><i class="fa fa-server"></i> Серверы
-              <span class="fa fa-chevron-down"></span>
-            </a>
-            <ul class="nav child_menu">
-              <li><a href="#">Управление сервером</a></li>
-              <li><a href="#">Цепи обработки</a></li>
-              <li><a href="#">Перенаправление обработки</a></li>
-            </ul>
-          </li>
-          <!-- <li>
-            <a
-              ><i class="fa fa-book"></i> Журналы
-              <span class="fa fa-chevron-down"></span
-            ></a>
-            <ul class="nav child_menu">
-              <li><a href="/complexlog">Журнал комплекса</a></li>
-              <li><a href="/unitlog">Журнал подразделения</a></li>
-              <li><a href="">Мой журнал</a></li>
-            </ul>
-          </li> -->
-          <!-- <li>
-            <a href="/complexes"><i class="fa fa-cubes"></i> Комплексы </a>
-          </li>
-          <li>
-            <a href="/index"><i class="fa fa-star"></i> Поздразделение </a>
-          </li> -->
-          <!-- <li>
-            <a href="/accesscontrol"
-              ><i class="fa fa-object-ungroup"></i> Разграничение доступа
-            </a>
-          </li> -->
-          <li>
-            <a><i class="fa fa-sitemap"></i> Структура
-              <span class="fa fa-chevron-down"></span>
-            </a>
-            <ul class="nav child_menu">
-              <li><a href="#">Комплексы</a></li>
-              <li><a href="#">Подразделения</a></li>
-              <li><a href="/users">Пользователи</a></li>
-              <li><a href="#">Разграничение доступа</a></li>
-            </ul>
-          </li>
-          <!-- <li>
-            <a href="/synchronization"
-              ><i class="fa fa-gears"></i> Проверка соединения
-            </a>
-          </li> -->
-          <!-- <li>
-            <a href="/laguagepairs"
-              ><i class="fa fa-globe"></i> Языковые пары
-            </a>
-          </li> -->
-        </ul>
-      </div>
-    </div>
-    <!-- /sidebar menu -->
-  </div>
-</div>
-<!-- top navigation -->
-<div class="top_nav">
-  <div class="nav_menu">
-    <div class="nav toggle">
-      <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-    </div>
-    <nav class="nav navbar-nav">
-      <ul class="navbar-right">
-        <li class="nav-item dropdown open" style="padding-left: 15px">
-          <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
-            data-toggle="dropdown" aria-expanded="false">
-            {{ login }}
+    <!-- begin header navigation right -->
+    <div class="col-md-4">
+      <ul class="navbar-nav navbar-right">
+        <!-- <li class="dropdown">
+                      <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+                          <i class="fa fa-bell-o"></i>
+                          <span class="">Уведомления<span class="label">5</span></span><b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu media-list pull-right">
+                          <li class="media">
+                              <a href="javascript:;">
+                                  <div class="media-body">
+                                      <h6 class="media-heading">Server Error Reports</h6>
+                                      <div class="text-muted f-s-11">3 minutes ago</div>
+                                  </div>
+                              </a>
+                          </li>
+                          <li class="media">
+                              <a href="javascript:;">
+                                  <div class="media-body">
+                                      <h6 class="media-heading">John Smith</h6>
+                                      <p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
+                                      <div class="text-muted f-s-11">25 minutes ago</div>
+                                  </div>
+                              </a>
+                          </li>
+                          <li class="media">
+                              <a href="javascript:;">
+                                  <div class="media-body">
+                                      <h6 class="media-heading">Olivia</h6>
+                                      <p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
+                                      <div class="text-muted f-s-11">35 minutes ago</div>
+                                  </div>
+                              </a>
+                          </li>
+                          <li class="media">
+                              <a href="javascript:;">
+                                  <div class="media-body">
+                                      <h6 class="media-heading"> New User Registered</h6>
+                                      <div class="text-muted f-s-11">1 hour ago</div>
+                                  </div>
+                              </a>
+                          </li>
+                          <li class="media">
+                              <a href="javascript:;">
+                                  <div class="media-body">
+                                      <h6 class="media-heading"> New Email From John</h6>
+                                      <div class="text-muted f-s-11">2 hour ago</div>
+                                  </div>
+                              </a>
+                          </li>
+                          <li class="dropdown-footer text-center">
+                              <a href="javascript:;">View more</a>
+                          </li>
+                      </ul>
+                  </li> -->
+        <li class="dropdown navbar-user">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="" style="color: #FFF;"></i>{{ login }} <i class="fa fa-user fa-2x"
+                style="color: #FFF; margin-left: 5px; "></i></span> <b class="caret"></b>
           </a>
-          <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/"><i class="fa fa-gear pull-right"></i> Настройкиt</a>
-            <a class="dropdown-item" href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-          </div>
-        </li>
-        <li role="presentation" class="nav-item dropdown open">
-          <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown"
-            aria-expanded="false">
-            <i class="fa fa-envelope-o"></i>
-            <span class="badge bg-green">6</span>
-          </a>
-          <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-            <li class="nav-item">
-              <a class="dropdown-item">
-                <span class="image">
-                  <!-- <img src="images/img.jpg" alt="Profile Image" -->
-                  /></span>
-                <span>
-                  <span>John Smith</span>
-                  <span class="time">3 mins ago</span>
-                </span>
-                <span class="message">
-                  Film festivals used to be do-or-die moments for movie makers.
-                  They were where...
-                </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="dropdown-item">
-                <span class="image">
-                  <!-- <img src="images/img.jpg" alt="Profile Image" -->
-                  /></span>
-                <span>
-                  <span>John Smith</span>
-                  <span class="time">3 mins ago</span>
-                </span>
-                <span class="message">
-                  Film festivals used to be do-or-die moments for movie makers.
-                  They were where...
-                </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="dropdown-item">
-                <span class="image">
-                  <!-- <img src="images/img.jpg" alt="Profile Image" -->
-                  /></span>
-                <span>
-                  <span>John Smith</span>
-                  <span class="time">3 mins ago</span>
-                </span>
-                <span class="message">
-                  Film festivals used to be do-or-die moments for movie makers.
-                  They were where...
-                </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="dropdown-item">
-                <span class="image">
-                  <!-- <img src="images/img.jpg" alt="Profile Image" -->
-                  /></span>
-                <span>
-                  <span>John Smith</span>
-                  <span class="time">3 mins ago</span>
-                </span>
-                <span class="message">
-                  Film festivals used to be do-or-die moments for movie makers.
-                  They were where...
-                </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <div class="text-center">
-                <a class="dropdown-item">
-                  <strong>See All Alerts</strong>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-              </div>
+          <ul class="dropdown-menu">
+            <li class="arrow"></li>
+            <!-- <li><a href="javascript:;">Профиль</a></li>
+                          <li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li> -->
+            <li><a data-toggle="modal" data-target="#myModal">Настройки <i class="fa fa-cog fa-lg"
+                  style="float: right;"></i></a> </li>
+            <li class="divider"></li>
+            <li>
+              <a href="/logout">Выход <i class="fa fa-sign-out fa-lg" style="float: right;"></i></a>
             </li>
           </ul>
         </li>
       </ul>
-    </nav>
+    </div>
+    <!-- end header navigation right -->
+  </div>
+  <div id="top-menu" class="top-menu">
+    <!-- begin top-menu nav -->
+    <ul class="nav">
+      {{#if flag.view.views.viewTranslate.flag}}
+        <li>
+          <a href="/translate"> Перевод текста
+          </a>
+        </li>
+      {{/if}}
+      {{#if (checkFileHandling flag.view.views.viewFileHandling.viewSendHandling.flag 
+        flag.view.views.viewFileHandling.viewJournalAPK.flag 
+        flag.view.views.viewFileHandling.viewJournalComplex.flag 
+        flag.view.views.viewFileHandling.viewJournalSubdiv.flag 
+        flag.view.views.viewFileHandling.viewJournalOperator.flag 
+        flag.view.views.viewFileHandling.viewFileStatisticAPK.flag 
+        flag.view.views.viewFileHandling.viewFileStatisticComplex.flag 
+        flag.view.views.viewFileHandling.viewFileStatisticSubdiv.flag 
+        flag.view.views.viewFileHandling.viewFileStatisticOperator.flag)}}
+        <li class="has-sub">
+          <a> Обработка файлов
+            <span class="caret pull-right"></span>
+          </a>
+          <ul class="sub-menu">
+            {{#if flag.view.views.viewFileHandling.viewSendHandling.flag}}
+              <li><a href="/filehandling">Отправить на обработку</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewFileHandling.viewJournalAPK.flag}}
+              <li><a href="/journal_apk">Журнал АПК</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewFileHandling.viewJournalComplex.flag}}
+              <li><a href="/journal_complex">Журнал комплекса</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewFileHandling.viewJournalSubdiv.flag}}
+              <li>
+                <a href="/journal_subdiv">Журнал подразделения</a>
+              </li>
+            {{/if}}
+            {{#if flag.view.views.viewFileHandling.viewJournalOperator.flag}}
+              <li><a href="/journal_operator">Мой журнал</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewFileHandling.viewFileStatisticAPK.flag}}
+              <li><a href="/filestatistic_apk">Статистика АПК</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewFileHandling.viewFileStatisticComplex.flag}}
+              <li><a href="/filestatistic_complex">Статистика комплекса</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewFileHandling.viewFileStatisticSubdiv.flag}}
+              <li><a href="/filestatistic_subdiv">Статистика подразделения</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewFileHandling.viewFileStatisticOperator.flag}}
+              <li><a href="/filestatistic_operator">Моя статистика</a></li>
+            {{/if}}
+          </ul>
+        </li>
+      {{/if}}
+      {{#if (checkTask flag.view.views.viewTasks.viewTasksAPK.flag 
+        flag.view.views.viewTasks.viewTasksComplex.flag 
+        flag.view.views.viewTasks.viewTasksSubdiv.flag 
+        flag.view.views.viewTasks.viewTasksOperator.flag 
+        flag.view.views.viewTasks.viewTasksStatisticAPK.flag 
+        flag.view.views.viewTasks.viewTasksStatisticComplex.flag 
+        flag.view.views.viewTasks.viewTasksStatisticSubdiv.flag 
+        flag.view.views.viewTasks.viewTasksStatisticOperator.flag)}}
+        <li class="has-sub">
+          <a> Задачи
+            <span class="caret pull-right"></span>
+          </a>
+          <ul class="sub-menu">
+            {{#if flag.view.views.viewTasks.viewTasksAPK.flag}}
+              <li><a href="/tasks_apk">Задачи АПК</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewTasks.viewTasksComplex.flag}}
+              <li><a href="/tasks_complex">Задачи комплекса</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewTasks.viewTasksSubdiv.flag}}
+              <li><a href="/tasks_subdiv">Задачи подразделения</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewTasks.viewTasksOperator.flag}}
+              <li><a href="/tasks_operator">Мои задачи</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewTasks.viewTasksStatisticAPK.flag}}
+              <li><a href="/statistic_apk">Статистика АПК</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewTasks.viewTasksStatisticComplex.flag}}
+              <li><a href="/statistic_complex">Статистика комплекса</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewTasks.viewTasksStatisticSubdiv.flag}}
+              <li><a href="/statistic_subdiv">Статистика подразделения</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewTasks.viewTasksStatisticOperator.flag}}
+              <li><a href="/statistic_operator">Моя статистика</a></li>
+            {{/if}}
+          </ul>
+        </li>
+      {{/if}}
+      <!-- <li>
+          <a href="/buildingcircuits"
+            ><i class="fa fa-code-fork"></i> Построение цепей
+          </a>
+        </li> -->
+      {{#if flag.view.views.viewChat.flag}}
+        <li>
+          <a href="/chat"> Чат </a>
+        </li>
+      {{/if}}
+      {{#if (checkPMS flag.view.views.viewPMS.viewPrioritizationPMS.flag 
+        flag.view.views.viewPMS.viewStatisticPMS.flag)}}
+        <li class="has-sub">
+          <a>ПМС
+            <span class="caret pull-right"></span>
+          </a>
+          <ul class="sub-menu">
+            {{#if flag.view.views.viewPMS.viewPrioritizationPMS.flag}}
+              <li><a href="/pms">Приоритезация</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewPMS.viewStatisticPMS.flag}}
+              <li><a href="/pms/statistic">Статистика</a></li>
+            {{/if}}
+          </ul>
+        </li>
+      {{/if}}
+      {{#if (checkStructure flag.view.views.viewStructure.viewComplexs.flag 
+          flag.view.views.viewStructure.viewServers.flag 
+          flag.view.views.viewStructure.viewSubdivs.flag 
+          flag.view.views.viewStructure.viewUsers.flag 
+          flag.view.views.viewStructure.viewMatrix.flag 
+          )}}
+        <li class="has-sub">
+          <a> Структура
+            <span class="caret pull-right"></span>
+          </a>
+          <ul class="sub-menu">
+            {{#if flag.view.views.viewStructure.viewComplexs.flag}}
+              <li><a href="/complexes">Комплексы</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewStructure.viewServers.flag}}
+              <li><a href="/servers">Серверы</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewStructure.viewSubdivs.flag}}
+              <li><a href="/subdiv">Подразделения</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewStructure.viewUsers.flag}}
+              <li><a href="/users">Пользователи</a></li>
+            {{/if}}
+            {{#if flag.view.views.viewStructure.viewMatrix.flag}}
+              <li><a href="/accesscontrol">Разграничение доступа</a></li>
+            {{/if}}
+          </ul>
+        </li>
+      {{/if}}
+    </ul>
   </div>
 </div>
+<!-- begin #content -->
+<!-- <div class="content">
+      <div class="pages scrollingDiv">
+
+          <div class="page-title">
+              <h1>Dashboard</h1>
+          </div>
+
+
+          <div class="row">
+              <div class="col-md-8">
+                  <div class="panel" data-sortable-id="index-1">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">Showing Risk</h4>
+                      </div>
+                      <div class="panel-body">
+                          <div id="interactive-chart" class="height-sm" style="height:225px">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="panel">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">Activity</h4>
+                      </div>
+                      <div class="panel-body panel-body-table">
+                          <table class="table">
+                              <thead>
+                                  
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <th class="operation_num">34</th>
+                                      <th class="autor">
+                                          <div><p class="pmainer">Bigtarget </p><p class="time">22.05</p></div>
+                                          <p class="message">На прошлой неделе состоялись выезды на пикники</p>
+                                      </th>
+                                  </tr>
+                                  <tr>
+                                      <th class="operation_num">34</th>
+                                      <th class="autor">
+                                          <div><p class="pmainer">Bigtarget </p><p class="time">22.05</p></div>
+                                          <p class="message">На прошлой неделе состоялись выезды на пикники</p>
+                                      </th>
+                                  </tr>
+                                  <tr>
+                                      <th class="operation_num">34</th>
+                                      <th class="autor">
+                                          <div><p class="pmainer">Bigtarget </p><p class="time">22.05</p></div>
+                                          <p class="message">На прошлой неделе состоялись выезды на пикники</p>
+                                      </th>
+                                  </tr>
+                              </tbody>
+                              </thead>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-8">
+                  <div class="panel">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">Table data</h4>
+                      </div>
+                      <div class="panel-body panel-body-table p-0">
+                          <table id="data-table" class="table table-striped table-bordered">
+                              <thead>
+                                  <tr>
+                                      <th>Rendering engine</th>
+                                      <th>Browser</th>
+                                      <th>Platform(s)</th>
+                                      <th>Engine version</th>
+                                      <th>CSS grade</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr class="odd gradeX">
+                                      <td>Trident</td>
+                                      <td>Internet Explorer 4.0</td>
+                                      <td>Win 95+</td>
+                                      <td>4</td>
+                                      <td>X</td>
+                                  </tr>
+                                  <tr class="even gradeC">
+                                      <td>Trident</td>
+                                      <td>Internet Explorer 5.0</td>
+                                      <td>Win 95+</td>
+                                      <td>5</td>
+                                      <td>C</td>
+                                  </tr>
+                                  <tr class="odd gradeA">
+                                      <td>Trident</td>
+                                      <td>Internet Explorer 5.5</td>
+                                      <td>Win 95+</td>
+                                      <td>5.5</td>
+                                      <td>A</td>
+                                  </tr>
+                                  <tr class="even gradeA">
+                                      <td>Trident</td>
+                                      <td>Internet Explorer 6</td>
+                                      <td>Win 98+</td>
+                                      <td>6</td>
+                                      <td>A</td>
+                                  </tr>
+                                  <tr class="odd gradeA">
+                                      <td>Trident</td>
+                                      <td>Internet Explorer 7</td>
+                                      <td>Win XP SP2+</td>
+                                      <td>7</td>
+                                      <td>A</td>
+                                  </tr>
+                                  <tr class="even gradeA">
+                                      <td>Trident</td>
+                                      <td>AOL browser (AOL desktop)</td>
+                                      <td>Win XP</td>
+                                      <td>6</td>
+                                      <td>A</td>
+                                  </tr>
+                                  <tr class="gradeA">
+                                      <td>Gecko</td>
+                                      <td>Firefox 1.0</td>
+                                      <td>Win 98+ / OSX.2+</td>
+                                      <td>1.7</td>
+                                      <td>A</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-4">
+                  <div class="panel">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">Board Q</h4>
+                      </div>
+                      <div class="panel-body">
+                          <div id="donut-chart" class="height-sm"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div> -->
+</div>
 <!-- /top navigation -->
+<!-- Modal -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Выбор ресурсов перевода и обработки файлов</h4>
+      </div>
+      <div class="modal-body">
+        <form action="" id="form_settings">
+          <div class="row">
+            <div class="container" data-toggle="buttons" style="display: flex; flex-flow: column;">
+              <!-- <div class="row" style="margin-bottom: 10px;">
+                <label class="">
+                  <input type="radio" name="options1" id="option1"> Все доступные
+                </label>
+              </div> -->
+              <div class="row" style="margin-bottom: 10px;">
+                <div class="" style="display: flex; flex-flow: column;">
+                  <div>
+                    <label class="">
+                      <input type="radio" name="options" id="allServers"> Все доступные
+                    </label>
+                  </div>
+                  <div id="servers">
+                    <label class="">
+                      <input type="radio" name="options" id="selectServers"> Выбрать
+                    </label>
+                    <div style="padding-left: 20px;">
+                      <input class="flat2" type="checkbox" name="server1" value="true">
+                      <span>Сервер1</span>
+                      </input>
+                    </div>
+                    <div style="padding-left: 20px;">
+                      <input class="flat2" type="checkbox" name="server2" value="true">
+                      <span>Сервер2</span>
+                      </input>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="container">
+              <div class="row">
+                <input type="checkbox" name="saveSettings" value="true" id="">
+                <span>Запомнить настройки</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Отмена</button>
+        <button type="submit" id="saveSettings" class="btn btn-success">Сохранить</button>
+      </div>
+    </div>
+  </div>
+</div>

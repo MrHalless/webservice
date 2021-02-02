@@ -1,0 +1,86 @@
+<div class="col-md-12 col-sm-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <h1>Добавление подразделения</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <form class="" action="" method="POST">
+        <div class="col-md-12" style="background-color: #FFF;">
+          <div class="row" style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Наименование подразделения:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="name" type="text" name="name" required="required"
+                  placeholder="Введите комплекс" />
+              </div>
+            </div>
+          </div>
+          <div class="row " style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Город:<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="city" style="width: 100%" id="subdiv_add_city" class="form-control" required>
+                  <option></option>
+                  {{#if filterCity.length}}
+                    {{#each filterCity}}
+                      <option value="{{ this }}">{{ this }}</option>
+                    {{/each}}
+                  {{/if}}
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row " style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Комплекс:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="complex" style="width: 100%" id="subdiv_add_complex" class="form-control">
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row " style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Серверы:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select multiple name="servers" style="width: 100%; height: inherit;" id="subdiv_add_servers"
+                  class="form-control" required>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row " style="padding-top: 15px; padding-bottom: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Языковые пары:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <div class="container" name="tree" id="tree"></div>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="test" id="qqq">
+          <!-- <div id="addTree"></div> -->
+          <!-- <div class="row">
+            <div class="container" id="tree"></div>
+          </div>
+          <div class="row">
+            <button class="btn btn-danger" id="checkTree">
+              Check
+            </button>
+          </div> -->
+          <input type="hidden" name="_csrf" id="_csrf" value="{{ csrf }}" />
+          <div class="field form-group" style="float: right; padding-top: 15px;">
+            <div class="col-md-12" style="padding-right: 0 !important;">
+              <a href="/subdiv" class="btn btn-danger"> Отмена </a>
+              <button type="submit" class="btn btn-success" id="buttonTree">Добавить</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

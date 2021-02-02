@@ -1,0 +1,554 @@
+<div class="col-md-12 col-sm-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <h1>Добавление роли</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <form class="accesscontrolForm" action="" method="POST">
+        <div class="col-md-12" style="background-color: #FFF;">
+          <div class="row" style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Наименование роли:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="name" type="text" name="name" placeholder="Введите роль"
+                  required="required" />
+              </div>
+            </div>
+          </div>
+          <div class="row " style="padding-top: 15px; padding-bottom: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Шаблон:<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select class="form-control selectAccess" name="template">
+                  <option></option>
+                  <option value="Админ АПК">Админ АПК</option>
+                  <option value="Админ комплекса">Админ комплекса</option>
+                  <option value="Руководитель АПК">Руководитель АПК</option>
+                  <option value="Руководитель комплекса">Руководитель комплекса</option>
+                  <option value="Руководитель подразделения">Руководитель подразделения</option>
+                  <option value="Оператор">Оператор</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="AdminAPK">
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Перевод текста:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTranslate"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Перевод текста </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Обработка файлов:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewSendHandling"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Отправить на обаботку </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewJournalAPK"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Журнал АПК </span>
+                  </div>
+                  <!--  -->
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewFileStatisticAPK"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика АПК </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Задачи:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksAPK"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Задачи АПК </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksStatisticAPK"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика АПК </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align ">Чат:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewChat"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Чат </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">ПМС:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewPrioritizationPMS"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Приоритезация </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewStatisticPMS"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Структура:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewComplexs"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Комплексы </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewServers"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Серверы </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewSubdivs"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Подразделения </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewUsers"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Пользователи </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewMatrix"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Разграничение доступа </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="AdminComplex">
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Перевод текста:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTranslate"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Перевод текста </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Обработка файлов:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column ">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewSendHandling"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Отправить на обаботку </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewJournalComplex"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Журнал комплекса </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewFileStatisticComplex"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика комплекса </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Задачи:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-start">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksComplex"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Задачи комплекса </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksStatisticComplex"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика комплекса </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align ">Чат:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewChat"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Чат </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">ПМС:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewPrioritizationPMS"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Приоритезация </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewStatisticPMS"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Структура:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewServers"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Серверы </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewSubdivs"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Подразделения </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewUsers"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Пользователи </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewMatrix"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Разграничение доступа </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="RuckAPK">
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Перевод текста:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTranslate"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Перевод текста </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Обработка файлов:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column ">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewSendHandling"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Отправить на обаботку </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewJournalAPK"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Журнал АПК </span>
+                  </div>
+                  <!--  -->
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewFileStatisticAPK"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика АПК </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Задачи:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-start">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksAPK"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Задачи АПК </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksStatisticAPK"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика АПК </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align ">Чат:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewChat"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Чат </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">ПМС:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewPrioritizationPMS"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Приоритезация </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewStatisticPMS"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="RuckComplex">
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Перевод текста:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTranslate"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Перевод текста </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Обработка файлов:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column ">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewSendHandling"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Отправить на обаботку </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewJournalComplex"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Журнал комплекса </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewFileStatisticComplex"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика комплекса </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Задачи:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-start">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksComplex"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Задачи комплекса </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksStatisticComplex"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика комплекса </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align ">Чат:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewChat"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Чат </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="RuckSubdiv">
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Перевод текста:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTranslate"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Перевод текста </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Обработка файлов:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column ">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewSendHandling"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Отправить на обаботку </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewJournalSubdiv"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Журнал подразделения </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewFileStatisticSubdiv"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика подразделения </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Задачи:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-start">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksSubdiv"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Задачи подразделения </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksStatisticSubdiv"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Статистика подразделения </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align ">Чат:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewChat"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Чат </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Operator">
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Перевод текста:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTranslate"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Перевод текста </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Обработка файлов:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column ">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewSendHandling"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Отправить на обаботку </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewJournalOperator"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Мой журнал </span>
+                  </div>
+                  <!--  -->
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewFileStatisticOperator"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Моя статистика </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align pt-0">Задачи:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-start">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksOperator"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Мои задачи </span>
+                  </div>
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewTasksStatisticOperator"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Моя статистика </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" row" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 5px; padding-top: 5px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align ">Чат:</label>
+              <div class="col-md-9 col-sm-9 d-flex justify-content-start align-self-center">
+                <div class="row col-md-12 flex-column">
+                  <div class="d-flex align-self-start">
+                    <input type="checkbox" class="flat" value="true" name="viewChat"
+                      style="margin-top: 3px; width: 15px; height: 15px;" />
+                    <span style="margin-left: 5px"> Чат </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" name="_csrf" value="{{ csrf }}" />
+        <!-- <div class="" style="margin-bottom: -30px"> -->
+        <div class="field form-group" style="float: right; padding-top: 15px;">
+          <div class="col-md-12" style="padding-right: 0 !important;">
+            <a href="/accesscontrol" class="btn btn-danger "> Отмена </a>
+            <button type="submit" class="btn btn-success accesscontrol_btn" style="display: none;">
+              Добавить
+            </button>
+          </div>
+        </div>
+        <!-- </div> -->
+    </div>
+    </form>
+  </div>
+</div>

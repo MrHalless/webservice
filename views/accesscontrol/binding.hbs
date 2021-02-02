@@ -1,0 +1,92 @@
+<div class="col-md-12 col-sm-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <h1>Связывание роли</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      {{#if find}}
+        <div class="container">
+          <form class="accesscontrolForm" action="untie" method="POST">
+            <div class="col-md-12" style="background-color: #FFF; padding-top: 30px;">
+              <div class="field item form-group pt-3 pb-3">
+                <label class="col-form-label col-md-2 col-sm-2 label-align" style="padding-left: 50px;">Группа в
+                  домене:<span class="required">*</span></label>
+                <div class="col-md-3 col-sm-3">
+                  <select name="groupDomain" style="width: 100%" id="groupDomain" class="form-control">
+                    <option value="{{ find }}">{{ find }}</option>
+                  </select>
+                </div>
+                <label class="col-form-label col-md-2 col-sm-2 label-align" style="padding-left: 135px;">Роль:<span
+                    class="required">*</span></label>
+                <div class="col-md-3 col-sm-3">
+                  <select name="template" style="width: 100%" id="template" class="form-control">
+                    <option value="{{ access.template }}">
+                      {{ access.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <input type="hidden" name="_csrf" value="{{ csrf }}" />
+              <div class="row">
+                <div class="field form-group" style="float: right; padding-top: 30px;">
+                  <div class="col-md-12">
+                    <a href="/accesscontrol" class="btn btn-danger"> Отмена </a>
+                    <button type="submit" class="btn btn-primary accesscontrol_btn">
+                      Отвязать
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      {{else}}
+        <div class="container">
+          <form class="accesscontrolForm" action="bind" method="POST">
+            <div class="col-md-12" style="background-color: #FFF; padding-top: 30px;">
+              <div class="field item form-group pt-3 pb-3">
+                <label class="col-form-label col-md-2 col-sm-2 label-align" style="padding-left: 50px;">Группа в
+                  домене:<span class="required">*</span></label>
+                <div class="col-md-3 col-sm-3">
+                  <select name="groupDomain" style="width: 100%" id="groupDomain" class="form-control" required>
+                    {{#if find}}
+                      <option value="{{ find }}">{{ find }}</option>
+                    {{else}}
+                      <option></option>
+                      {{#if groups.length}}
+                        {{#each groups}}
+                          <option value="{{ this }}">{{ this }}</option>
+                        {{/each}}
+                      {{/if}}
+                    {{/if}}
+                  </select>
+                </div>
+                <label class="col-form-label col-md-2 col-sm-2 label-align" style="padding-left: 135px;">Роль:<span
+                    class="required">*</span></label>
+                <div class="col-md-3 col-sm-3">
+                  <select name="template" style="width: 100%" id="template" class="form-control">
+                    <option value="{{ access.name }}">
+                      {{ access.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <input type="hidden" name="_csrf" value="{{ csrf }}" />
+              <div class="row">
+                <div class="field form-group" style="float: right; padding-top: 30px;">
+                  <div class="col-md-12">
+                    <a href="/accesscontrol" class="btn btn-danger"> Отмена </a>
+                    <button type="submit" class="btn btn-primary accesscontrol_btn">
+                      Привязать
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

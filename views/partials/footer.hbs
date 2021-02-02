@@ -1,39 +1,1526 @@
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.bundle.min.js"></script>
-<script src="/js/custom.min.js"></script>
+<!-- ================== BEGIN BASE JS ================== -->
+<!-- <script src="/assets/plugins/pace/pace.min.js"></script> -->
+<script src="/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+<script src="http://192.168.1.25:8000/socket.io/socket.io.js"></script>
+<!-- <script src="/js/socket.io.js"></script> -->
+<script src="/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+<script src="/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+<script src="/assets/plugins/flot/jquery.flot.min.js"></script>
+<script src="/assets/plugins/flot/jquery.flot.time.min.js"></script>
+<script src="/assets/plugins/flot/jquery.flot.resize.min.js"></script>
+<script src="/assets/plugins/flot/jquery.flot.pie.min.js"></script>
+<script src="/assets/plugins/sparkline/jquery.sparkline.js"></script>
+<script src="/assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+<script src="/assets/js/table-manage-default.demo.min.js"></script>
+<script src="/assets/js/dashboard.min.js"></script>
+<script src="/assets/js/apps.min.js"></script>
+<script src="/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+<script src="/assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+<!-- <script src="/js/jquery.maskedinput.min.js"></script> -->
+<script src="/js/jquery.mask.min.js"></script>
+<script src="/js/moment.min.js"></script>
+<script src="/js/moment-with-locales.min.js"></script>
+<!-- <script src="/js/bootstrap.bundle.min.js"></script> -->
+<!-- <script src="/js/custom.min.js"></script> -->
 <script src="/js/toastr.min.js"></script>
-<script src="/js/tilt.jquery.min.js"></script>
+<!-- <script src="/js/tilt.jquery.min.js"></script>
 <script src="/js/app.js"></script>
-<script src="/js/modal.js"></script>
-<script src="/js/jquery.dataTables.min.js"></script>
-<script src="/js/dataTables.bootstrap.min.js"></script>
-<script src="/js/buttons.bootstrap.min.js"></script>
-<script src="/js/buttons.flash.min.js"></script>
+<script src="/js/modal.js"></script> -->
+<script src="/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="/assets/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.ru.js">
+</script>
+<!-- <script src="/assets/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script> -->
+<!-- <script src="/assets/plugins/ionRangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+<script src="/assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script src="/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script> -->
+<script src="/js/tree.min.js"></script>
+<!-- ================== END PAGE LEVEL JS ================== -->
+<script>
+  $(document).ready(function () {
+    App.init();
+    Dashboard.init();
+    // Notification.init();
+  });
+  $(document).ready(function () {
+    App.init();
+    TableManageDefault.init();
+  });
+</script>
+<!-- <script src="/js/jquery.min.js"></script> -->
+<!-- <script src="/js/jquery.dataTables.js"></script>
+<script src="/js/dataTables.bootstrap.min.js"></script> -->
+<!-- <script src="/js/buttons.bootstrap.min.js"></script> -->
+<!-- <script src="/js/buttons.flash.min.js"></script>
 <script src="/js/buttons.html5.min.js"></script>
-<script src="/js/buttons.print.min.js"></script>
-<script src="/js/dataTables.fixedHeader.min.js"></script>
+<script src="/js/buttons.print.min.js"></script>  -->
+<!-- <script src="/js/dataTables.fixedHeader.min.js"></script>
 <script src="/js/dataTables.keyTable.min.js"></script>
 <script src="/js/dataTables.responsive.min.js"></script>
 <script src="/js/responsive.bootstrap.js"></script>
-<script src="/js/dataTables.scroller.min.js"></script>
+<script src="/js/dataTables.scroller.min.js"></script> -->
+<script src="/js/select2.full.min.js"></script>
+<script src="/js/daterangepicker.js"></script>
+<!-- <script src="/js/bootstrap-datetimepicker.min.js"></script> -->
+<script src="/js/handlebars.js"></script>
+<!-- <script src="/js/icheck.min.js"></script> -->
+<!-- <script src="/js/parsley.min.js"></script> -->
+<!-- <script src="/js/ru.js"></script> -->
 <script>
-    toastr.options.timeOut = 1500;
-    // toastr.options.progressBar = true;
-    toastr.options.closeButton = true;
-    // toastr.error('Логин уже существует', 'Ошибка')
+  toastr.options.timeOut = 3000;
+  // toastr.options.progressBar = true;
+  toastr.options.closeButton = true;
+  // toastr.error('Логин уже существует', 'Ошибка')
 </script>
 {{#if error}}
-    <script>
-        toastr.error('{{error}}')
-    </script>
+  <script>
+    toastr.error('{{error}}')
+  </script>
 {{/if}}
 {{#if success}}
-    <script>
-        toastr.success('{{success}}')
-    </script>
+  <script>
+    toastr.success('{{success}}')
+  </script>
 {{/if}}
-{{#if settings}}
+<!-- {{#if settings}}
     <script src="/js/modal.js"></script>
+{{/if}} -->
+<script>
+</script>
+<script>
+  $(document).ready(function () {
+
+    const socket = io("ws://192.168.1.25:8000", {
+      transport: ['websocket']
+    });
+    $('#datatable1').DataTable();
+    $('#datatable2').DataTable();
+    $('#datatable3').DataTable();
+    $('#datatable4').DataTable();
+    $('#datatable5').DataTable();
+    $('#table_logs').DataTable({
+      aoColumnDefs: [{
+        aTargets: [3],
+        bSortable: false
+      }, ]
+    });
+
+    $('#journal_apk').DataTable({
+      aoColumnDefs: [
+
+        {
+          aTargets: [8, 9],
+          bSortable: false
+        },
+
+      ]
+    });
+
+    $('#table_accesscontrol').DataTable({
+      aoColumnDefs: [{
+        aTargets: [3],
+        bSortable: false
+      }, ]
+    });
+    $('#table_complexes').DataTable({
+      aoColumnDefs: [{
+        aTargets: [3],
+        bSortable: false
+      }, ]
+    });
+    $('#settings_file_apk__file_info').DataTable({
+      "searching": false,
+      "bLengthChange": false,
+      aoColumnDefs: [{
+        aTargets: [0, 1],
+        bSortable: false
+      }, ]
+    });
+    $('#settings_file_apk__log_info').DataTable({
+      aoColumnDefs: [{
+        aTargets: [3],
+        bSortable: false
+      }, ]
+    });
+    $('#table_result_setting_file_apk').DataTable({
+      "searching": false,
+      "bLengthChange": false,
+      aoColumnDefs: [{
+          aTargets: [0, 1],
+          bSortable: false
+        },
+
+      ]
+    });
+    $('#table_settings_file').DataTable({
+      "searching": false,
+      "iDisplayLength": 5,
+      "bLengthChange": false,
+      aoColumnDefs: [{
+        aTargets: [3],
+        bSortable: false
+      }, ]
+    });
+
+    $('#table_servers').DataTable({
+      aoColumnDefs: [{
+          aTargets: [5],
+          bSortable: false
+        },
+
+      ]
+    });
+    $('#table_filehandling').DataTable({
+      aoColumnDefs: [{
+          aTargets: [2, 3, 4, 5, 6],
+          bSortable: false
+        },
+
+      ]
+    });
+    $('#table_subdiv').DataTable({
+      aoColumnDefs: [{
+          aTargets: [6],
+          bSortable: false
+        },
+
+      ]
+    });
+
+    $('#languages').select2();
+    $('#input_servers').select2();
+    $('#input_servers_edit').select2();
+    $('#input_subdiv_edit').select2();
+    $('#subdiv_add_servers').select2();
+    $('#user_add_servers').select2();
+    $('#user_edit_servers').select2();
+
+
+    // $("#datetimepicker1").datetimepicker()
+    $('#datetimepicker1').datepicker({
+      language: 'ru'
+    });
+    // $('#datetimepicker1').datetimepicker({locale:'es'});
+    $('#Datepicker2').datepicker({
+      language: 'ru'
+    });
+    $('#Datepicker1').datepicker({
+      language: 'ru'
+    });
+
+    $('.block-text').hide();
+    $('#savePms').on('click', function () {
+      let radio = $('input[name="optionsRadios"]:checked').val();
+      // const res = JSON.stringify(resultTree);
+      // console.log('RES', res);
+      // $('#qqq').val(res);
+
+      if (radio === 'source') {
+        // $('#input_data').val(res);
+      }
+      if (radio === 'translate') {
+        // $('#input_data').val(res);
+      }
+      if (radio === 'date') {
+        let from = $('#Datepicker1').val();
+        // let to = $('#Datepicker2').datetimepicker('getDate');
+        console.log(from);
+        // console.log(to);
+        // $('#input_data').val(res);
+      }
+      if (radio === 'id') {
+        const idData = $('#id_input').val();
+        if (idData === '') {
+
+        } else {
+          let dataObject = {
+            method: 'id',
+            sourse: {
+              url: '',
+              checked: false,
+            },
+            translate: false,
+            data: {
+              from: '',
+              to: '',
+            },
+            id: `${idData}`
+          }
+          $('#input_data').val(JSON.stringify(dataObject));
+        }
+
+      }
+      // console.log(radio);
+
+    })
+    $('input[name="optionsRadios"]').click(function () {
+      let radio = $('input[name="optionsRadios"]:checked').val();
+      var target = $('#block-' + radio);
+      // console.log(target);
+      $('.block-text').not(target).hide();
+      target.fadeIn(500);
+    })
+
+
+    // $('input.flat').iCheck({
+    //     checkboxClass: 'icheckbox_flat-green'
+    // })
+    $('.AdminAPK').hide();
+    $('.AdminComplex').hide();
+    $('.RuckAPK').hide();
+    $('.RuckComplex').hide();
+    $('.RuckSubdiv').hide();
+    $('.Operator').hide();
+
+    function clearCheckBox() {
+      $('.flat:checked').prop('checked', false);
+      if ($('.flat:checked').length < 1) {
+        $('.accesscontrol_btn').hide();
+      }
+    }
+
+    $('.selectAccess').change(function () {
+      let currentIndex = $('.selectAccess')[0].selectedIndex;
+      if (currentIndex == 0) {
+        clearCheckBox();
+        $('.AdminAPK').hide();
+        $('.AdminComplex').hide();
+        $('.RuckAPK').hide();
+        $('.RuckComplex').hide();
+        $('.RuckSubdiv').hide();
+        $('.Operator').hide();
+      }
+      if (currentIndex == 1) {
+        clearCheckBox();
+        $('.AdminAPK').show();
+        $('.AdminComplex').hide();
+        $('.RuckAPK').hide();
+        $('.RuckComplex').hide();
+        $('.RuckSubdiv').hide();
+        $('.Operator').hide();
+      }
+      if (currentIndex == 2) {
+        clearCheckBox();
+        $('.AdminAPK').hide();
+        $('.AdminComplex').show();
+        $('.RuckAPK').hide();
+        $('.RuckComplex').hide();
+        $('.RuckSubdiv').hide();
+        $('.Operator').hide();
+      }
+      if (currentIndex == 3) {
+        clearCheckBox();
+        $('.AdminAPK').hide();
+        $('.AdminComplex').hide();
+        $('.RuckAPK').show();
+        $('.RuckComplex').hide();
+        $('.RuckSubdiv').hide();
+        $('.Operator').hide();
+      }
+      if (currentIndex == 4) {
+        clearCheckBox();
+        $('.AdminAPK').hide();
+        $('.AdminComplex').hide();
+        $('.RuckAPK').hide();
+        $('.RuckComplex').show();
+        $('.RuckSubdiv').hide();
+        $('.Operator').hide();
+      }
+      if (currentIndex == 5) {
+        clearCheckBox();
+        $('.AdminAPK').hide();
+        $('.AdminComplex').hide();
+        $('.RuckAPK').hide();
+        $('.RuckComplex').hide();
+        $('.RuckSubdiv').show();
+        $('.Operator').hide();
+      }
+      if (currentIndex == 6) {
+        clearCheckBox();
+        $('.AdminAPK').hide();
+        $('.AdminComplex').hide();
+        $('.RuckAPK').hide();
+        $('.RuckComplex').hide();
+        $('.RuckSubdiv').hide();
+        $('.Operator').show();
+      }
+
+    })
+
+    $('.flat').each(function (index) {
+      $(this).on('click', function () {
+        if ($(this).is(':checked')) {
+          if ($('.flat:checked').length > 0) {
+            console.log('поставили');
+            $('.accesscontrol_btn').show();
+          }
+        } else {
+          if ($('.flat:checked').length < 1) {
+            console.log('убрали');
+            $('.accesscontrol_btn').hide();
+          }
+
+        }
+      })
+    })
+
+    // $().mask
+    // $.mask.definitions['h'] = '[0-9]';
+    $('#ip_server').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+      translation: {
+        'Z': {
+          pattern: /[0-9]/,
+          optional: true
+        }
+      }
+    });
+    $('#port').mask('99999')
+    // $('#button_translate').on('click', function () {
+    //     let $btn = $(this).button('loading');
+
+    //     setTimeout(function () {
+    //         $btn.button('reset')
+    //     }, 3000)
+
+    // })
+    ///////////////////////////////////////////////////////////////////////////////////
+    // !!!! SOCKETS
+    // 
+    $('#send_task').on('click', function () {
+      // тут мы указываем пользователя, которому отправим задачу
+      socket.emit('add_task', 'peshkova');
+    })
+    socket.on('new_tasks', function (data) {
+      console.log(data);
+      toastr.success(`${data}`);
+    });
+    socket.on('get_complex', function (data) {
+      $('#server_add_complex').empty();
+
+      const city = $('#server_add_city').val();
+      data.forEach(element => {
+
+        $('#server_add_complex').append(
+          `<option value='${element.name}'>${element.name}</option>`
+        )
+      });
+
+
+    });
+    socket.on('server_get_complex', function (data) {
+      // console.log(data);
+      $('#server_add_complex').empty();
+      if (data) {
+        $('#server_add_complex').prop('disabled', false);
+        data.forEach(element => {
+
+          $('#server_add_complex').append(
+            `<option value='${element.name}'>${element.name}</option>`
+          )
+        });
+      } else {
+        $('#server_add_complex').empty();
+        $('#server_add_complex').prop('disabled', true);
+      }
+      // const city = $('#server_add_city').val();
+
+
+
+    });
+    socket.on('user_get_complex', function (data) {
+      // console.log(data);
+      $('#user_add_complex').empty();
+      if (data) {
+        // $('#server_add_complex').prop('disabled', false);
+        $('#user_add_complex').append(
+          `<option '></option>`
+        )
+        data.forEach(element => {
+
+          $('#user_add_complex').append(
+            `<option value='${element.name}'>${element.name}</option>`
+          )
+        });
+      } else {
+        $('#user_add_complex').empty();
+        // $('#server_add_complex').prop('disabled', true);
+      }
+    });
+
+
+    socket.on('subdiv_get_complex', function (data) {
+      $('#subdiv_add_complex').empty();
+      const city = $('#server_add_city').val();
+      $('#subdiv_add_complex').append(
+        `<option></option>`
+      )
+      data.forEach(element => {
+
+        $('#subdiv_add_complex').append(
+          `<option value='${element.name}'>${element.name}</option>`
+        )
+      });
+    });
+    socket.on('user_get_subdiv', function (data) {
+      $('#user_add_subdiv').empty();
+      $('#user_add_subdiv').append(
+        `<option></option>`
+      )
+      data.forEach(element => {
+
+        $('#user_add_subdiv').append(
+          `<option value='${element.name}'>${element.name}</option>`
+        )
+      });
+    });
+
+    socket.on('subdiv_get_servers', function (languageCheck) {
+      $('#subdiv_add_servers').empty();
+      // treeServerValues.push(languageCheck);
+      // console.log('lC', languageCheck);
+      if (languageCheck.length > 0) {
+        $('#subdiv_add_servers').prop('disabled', false);
+        languageCheck.forEach(element => {
+
+          $('#subdiv_add_servers').append(
+            `<option value='${element.name}'>${element.name}</option>`
+          )
+        });
+      } else {
+        $('#subdiv_add_servers').prop('disabled', true);
+      }
+    });
+    socket.on('user_get_servers', function (servers) {
+      $('#user_add_servers').empty();
+      // treeServerValues.push(languageCheck);
+      // console.log('lC', languageCheck);
+      if (servers.length > 0) {
+        $('#user_add_servers').prop('disabled', false);
+        // console.log(servers);
+        servers.forEach(element => {
+          element.servers.forEach(servers => {
+            $('#user_add_servers').append(
+              `<option value='${servers.name}'>${servers.name}</option>`
+            )
+          })
+
+
+        });
+      } else {
+        $('#user_add_servers').prop('disabled', true);
+      }
+    });
+
+    $('#subdiv_add_complex').on('change', function () {
+      const complex = $('#subdiv_add_complex').val();
+      if (complex) {
+        $('#subdiv_add_complex').prop('disabled', false);
+        socket.emit('subdiv_get_name_servers', complex);
+      } else {
+        $('#subdiv_add_complex').empty();
+        $('#subdiv_add_complex').prop('disabled', true);
+        // $('#subdiv_add_servers').prop('disabled', true);
+      }
+    })
+
+    $('#server_add_city').on('change', function () {
+
+      const city = $('#server_add_city').val();
+      if (city) {
+        $('#server_add_complex').prop('disabled', false);
+        socket.emit('server_get_name_complex', city);
+      } else {
+        $('#server_add_complex').empty();
+        $('#server_add_complex').prop('disabled', true);
+      }
+
+    })
+    $('#subdiv_add_city').on('change', function () {
+
+      const city = $('#subdiv_add_city').val();
+      if (city) {
+        $('#subdiv_add_complex').prop('disabled', false);
+        socket.emit('subdiv_get_name_complex', city);
+      } else {
+        $('#subdiv_add_complex').empty();
+        $('#subdiv_add_complex').prop('disabled', true);
+      }
+
+    })
+    $('#user_add_city').on('change', function () {
+
+      const city = $('#user_add_city').val();
+      if (city) {
+        // $('#user_add_complex').prop('disabled', false);
+        socket.emit('user_get_name_complex', city);
+      } else {
+        $('#user_add_complex').empty();
+        $('#user_add_subdiv').empty();
+        // $('#user_add_complex').prop('disabled', true); 
+      }
+    })
+    $('#user_add_subdiv').on('change', function () {
+
+      const subdiv = $('#user_add_subdiv').val();
+
+      if (subdiv) {
+        // $('#subdiv_add_complex').prop('disabled', false);
+        socket.emit('user_get_name_servers', subdiv);
+      } else {
+        $('user_add_servers').empty();
+        // $('#subdiv_add_complex').prop('disabled', true);
+      }
+    })
+    $('#user_add_complex').on('change', function () {
+
+      const complex = $('#user_add_complex').val();
+      console.log(complex);
+      if (complex) {
+        // $('#subdiv_add_complex').prop('disabled', false);
+
+        socket.emit('user_get_name_subdiv', complex);
+      } else {
+        $('#user_add_subdiv').empty();
+        // $('#subdiv_add_complex').prop('disabled', true);
+      }
+    })
+
+    let mapTree;
+    let resultTree;
+    let resultEditTree;
+    let resultTreeForUser;
+    let resultSaveTree;
+    socket.on('subdiv_add_name_servers_forTree', function (data) {
+      // console.log('data', data);
+      let fullArray = new Array;
+      if (data.length === 0) {
+        // console.log('if');
+        // console.log('данных нет');
+
+        // тут стираем полностью Tree
+      } else {
+        // console.log('else');
+        // стираем  tree и рисуем заного
+        // console.log('DATA', data);
+        if (data) {
+          let childrenTest = [];
+          let testArray = [];
+
+          data.forEach(element => {
+            childrenTest = new Array;
+            element.languages.forEach(lang => {
+              childrenTest.push({
+                id: `${element.name}@^%${lang.first}/${lang.second}`,
+                text: `${lang.firstDescription}-${lang.secondDescription}`,
+              })
+            });
+            let tempObject = {
+              id: `${element.name}`,
+              text: `${element.name}`,
+              children: childrenTest,
+            };
+            fullArray.push(tempObject);
+          })
+
+          const myTree = new Tree('#tree', {
+            data: fullArray,
+            closeDepth: 1,
+            onChange: function () {
+              // console.log(this);
+            }
+          });
+          let arrayFull = new Array;
+          let arrayChildren = new Array;
+          let result = new Array;
+
+          $('#tree').on('click', function () {
+            mapTree = new Map();
+            resultTree = new Array;
+            const tr = myTree.treeNodes;
+            // console.log('tr', tr);
+
+            tr.forEach(element => {
+              const treeArray = new Array;
+              const arrayChildren = new Array;
+              element.children.forEach(element => {
+
+                if (element.status === 2) {
+                  treeArray.push(element.id)
+                  arrayChildren.push(element.id.split('@^%')[1]);
+                  console.log(arrayChildren);
+                }
+              });
+              if (element.status !== 0 && element.status !== undefined) {
+                resultTree.push({
+                  id: `${element.id}`,
+                  value: arrayChildren,
+                });
+                mapTree.set(element.id, treeArray);
+              }
+
+            });
+            console.log('res', resultTree);
+          })
+        } else {
+          let fA = new Array;
+          const myTree = new Tree('#tree', {
+            data: fA,
+
+            onChange: function () {
+              // console.log(this);
+            }
+          });
+        }
+      }
+    });
+    socket.on('user_add_name_servers_forTree', function (data) {
+      console.log('data', data);
+      let fullArray = new Array;
+      if (data.length === 0) {
+        // console.log('if');
+        // console.log('данных нет');
+
+        // тут стираем полностью Tree
+      } else {
+        // console.log('else');
+        // стираем  tree и рисуем заного
+        // console.log('DATA', data);
+        if (data) {
+          let childrenTest = [];
+          let testArray = [];
+
+          data.forEach(element => {
+            childrenTest = new Array;
+            element.languages.forEach(lang => {
+              childrenTest.push({
+                id: `${element.name}@^%${lang.first}/${lang.second}`,
+                text: `${lang.firstDescription}-${lang.secondDescription}`,
+              })
+            });
+            let tempObject = {
+              id: `${element.name}`,
+              text: `${element.name}`,
+              children: childrenTest,
+            };
+            fullArray.push(tempObject);
+          })
+
+          const myTree = new Tree('#userTree', {
+            data: fullArray,
+            closeDepth: 1,
+            onChange: function () {
+              // console.log(this);
+            }
+          });
+          let arrayFull = new Array;
+          let arrayChildren = new Array;
+          let result = new Array;
+
+          $('#userTree').on('click', function () {
+            mapTree = new Map();
+            resultTreeForUser = new Array;
+            const tr = myTree.treeNodes;
+            // console.log('tr', tr);
+
+            tr.forEach(element => {
+              const treeArray = new Array;
+              const arrayChildren = new Array;
+              element.children.forEach(element => {
+
+                if (element.status === 2) {
+                  treeArray.push(element.id)
+                  arrayChildren.push(element.id.split('@^%')[1]);
+                  console.log(arrayChildren);
+                }
+              });
+              if (element.status !== 0 && element.status !== undefined) {
+                resultTreeForUser.push({
+                  id: `${element.id}`,
+                  value: arrayChildren,
+                });
+                mapTree.set(element.id, treeArray);
+              }
+
+            });
+            console.log('res', resultTreeForUser);
+          })
+        } else {
+          let fA = new Array;
+          const myTree = new Tree('#userTree', {
+            data: fA,
+
+            onChange: function () {
+              // console.log(this);
+            }
+          });
+        }
+      }
+    });
+
+    socket.on('user_edit_servers_forTree', function (data) {
+      console.log('DATA', data);
+      let fullArray = new Array;
+      // console.log('Получили данные', data);
+      // const myTree = new Tree('#tree', {
+      //   // data: // тут массив
+      // })
+      let childrenTest = [];
+      let testArray = [];
+
+      data.forEach(element => {
+        childrenTest = new Array;
+        element.languages.forEach(lang => {
+          childrenTest.push({
+            id: `${element.name}@^%${lang.first}/${lang.second}`,
+            text: `${lang.firstDescription}-${lang.secondDescription}`,
+          })
+        });
+        let tempObject = {
+          id: `${element.name}`,
+          text: `${element.name}`,
+          children: childrenTest,
+        };
+        fullArray.push(tempObject);
+      })
+
+      const myTree = new Tree('#userTree', {
+        data: fullArray,
+        // closeDepth: 1,
+        onChange: function () {
+          console.log('ТУТ', this);
+        },
+        loaded: async function () {
+          let filterArray = new Array;
+          let arrayForTree = new Array;
+          let value = $('#user_edit_subdiv').val();
+          socket.emit('user_edit_get_subdiv_for_Tree', value);
+          // let val;
+          socket.on('user_edit_subdiv_for_Tree', function (data) {
+            // val = value;
+            // console.log(value);
+
+            console.log('subdiv', data);
+            let childrenTest = [];
+            let testArray = [];
+
+            data.servers.forEach(element => {
+              childrenTest = new Array;
+              element.languages.forEach(lang => {
+                childrenTest.push({
+                  id: `${element.name}@^%${lang.first}/${lang.second}`,
+                  text: `${lang.firstDescription}-${lang.secondDescription}`,
+                })
+              });
+              let tempObject = {
+                id: `${element.name}`,
+                text: `${element.name}`,
+                children: childrenTest,
+              };
+              filterArray.push(tempObject);
+            })
+            console.log('filter', filterArray);
+
+            filterArray.forEach(item => {
+              item.children.forEach(child => {
+                arrayForTree.push(child.id)
+              })
+            })
+            socket.emit('user_edit_get_tree_for_user', $('#login').val());
+            socket.on('user_edit_tree_for_user', function (data) {
+              let filter = new Array;
+              let ForTree = new Array;
+              console.log('USER', data);
+              let children = new Array;
+              let test = new Array;
+
+              data.servers.forEach(element => {
+                children = new Array;
+                element.languages.forEach(lang => {
+                  children.push({
+                    id: `${element.name}@^%${lang.first}/${lang.second}`,
+                    text: `${lang.firstDescription}-${lang.secondDescription}`,
+                  })
+                });
+                let tempObject = {
+                  id: `${element.name}`,
+                  text: `${element.name}`,
+                  children: children,
+                };
+                filter.push(tempObject);
+              })
+              console.log('222', filter);
+              resultSaveTree = filter;
+              filter.forEach(item => {
+                item.children.forEach(child => {
+                  ForTree.push(child.id)
+                })
+              })
+              myTree.values = ForTree;
+
+              const tr = myTree.treeNodes;
+              mapTree = new Map();
+              resultSaveTree = new Array;
+              tr.forEach(element => {
+                const treeArray = new Array;
+                const arrayChildren = new Array;
+                element.children.forEach(element => {
+
+                  if (element.status === 2) {
+                    treeArray.push(element.id)
+                    arrayChildren.push(element.id.split('@^%')[1]);
+                    // console.log(arrayChildren);
+                  }
+                });
+                if (element.status !== 0 && element.status !== undefined) {
+                  resultSaveTree.push({
+                    id: `${element.id}`,
+                    value: arrayChildren,
+                  });
+                  mapTree.set(element.id, treeArray);
+                }
+              });
+            })
+
+
+            setTimeout(() => {
+              socket.off('user_edit_subdiv_for_Tree');
+              socket.off('user_edit_tree_for_user');
+            }, 100);
+          })
+
+        }
+      });
+      $('#userTree').on('click', function () {
+        mapTree = new Map();
+        resultSaveTree = new Array;
+        const tr = myTree.treeNodes;
+        // console.log('tr', tr);
+
+        tr.forEach(element => {
+          const treeArray = new Array;
+          const arrayChildren = new Array;
+          element.children.forEach(element => {
+
+            if (element.status === 2) {
+              treeArray.push(element.id)
+              arrayChildren.push(element.id.split('@^%')[1]);
+              // console.log(arrayChildren);
+            }
+          });
+          if (element.status !== 0 && element.status !== undefined) {
+            resultSaveTree.push({
+              id: `${element.id}`,
+              value: arrayChildren,
+            });
+            mapTree.set(element.id, treeArray);
+          }
+
+        });
+        console.log('res22', resultSaveTree);
+      })
+    })
+    // Получаем даные из Бд для редактирования
+
+    socket.on('subdiv_edit_servers_forTree', function (data) {
+      let fullArray = new Array;
+      // console.log('Получили данные', data);
+      // const myTree = new Tree('#tree', {
+      //   // data: // тут массив
+      // })
+      let childrenTest = [];
+      let testArray = [];
+
+      data.forEach(element => {
+        childrenTest = new Array;
+        element.languages.forEach(lang => {
+          childrenTest.push({
+            id: `${element.name}@^%${lang.first}/${lang.second}`,
+            text: `${lang.firstDescription}-${lang.secondDescription}`,
+          })
+        });
+        let tempObject = {
+          id: `${element.name}`,
+          text: `${element.name}`,
+          children: childrenTest,
+        };
+        fullArray.push(tempObject);
+      })
+
+      const myTree = new Tree('#tree', {
+        data: fullArray,
+        // closeDepth: 1,
+        onChange: function () {
+          console.log('ТУТ', this);
+        },
+        loaded: async function () {
+          let filterArray = new Array;
+          let arrayForTree = new Array;
+          let value = $('#name').val();
+          socket.emit('subdiv_edit_get_subdiv_for_Tree', value);
+          // let val;
+          socket.on('subdiv_edit_subdiv_for_Tree', function (data) {
+            // val = value;
+            // console.log(value);
+
+            console.log('subdiv', data);
+            let childrenTest = [];
+            let testArray = [];
+
+            data.servers.forEach(element => {
+              childrenTest = new Array;
+              element.languages.forEach(lang => {
+                childrenTest.push({
+                  id: `${element.name}@^%${lang.first}/${lang.second}`,
+                  text: `${lang.firstDescription}-${lang.secondDescription}`,
+                })
+              });
+              let tempObject = {
+                id: `${element.name}`,
+                text: `${element.name}`,
+                children: childrenTest,
+              };
+              filterArray.push(tempObject);
+            })
+            console.log('filter', filterArray);
+
+            filterArray.forEach(item => {
+              item.children.forEach(child => {
+                arrayForTree.push(child.id)
+              })
+            })
+            myTree.values = arrayForTree;
+
+            const tr = myTree.treeNodes;
+            mapTree = new Map();
+            resultEditTree = new Array;
+            tr.forEach(element => {
+              const treeArray = new Array;
+              const arrayChildren = new Array;
+              element.children.forEach(element => {
+
+                if (element.status === 2) {
+                  treeArray.push(element.id)
+                  arrayChildren.push(element.id.split('@^%')[1]);
+                  // console.log(arrayChildren);
+                }
+              });
+              if (element.status !== 0 && element.status !== undefined) {
+                resultEditTree.push({
+                  id: `${element.id}`,
+                  value: arrayChildren,
+                });
+                mapTree.set(element.id, treeArray);
+              }
+            });
+
+            socket.off('subdiv_edit_subdiv_for_Tree');
+          })
+
+        }
+      });
+      $('#tree').on('click', function () {
+        mapTree = new Map();
+        resultEditTree = new Array;
+        const tr = myTree.treeNodes;
+
+        tr.forEach(element => {
+          const treeArray = new Array;
+          const arrayChildren = new Array;
+          element.children.forEach(element => {
+
+            if (element.status === 2) {
+              treeArray.push(element.id)
+              arrayChildren.push(element.id.split('@^%')[1]);
+              // console.log(arrayChildren);
+            }
+          });
+          if (element.status !== 0 && element.status !== undefined) {
+            resultEditTree.push({
+              id: `${element.id}`,
+              value: arrayChildren,
+            });
+            mapTree.set(element.id, treeArray);
+          }
+
+        });
+        console.log('res22', resultEditTree);
+      })
+    })
+    socket.on('subdiv_edit_get_servers', function (data) {
+      const currentServer = $('#input_subdiv_edit').val();
+
+      for (let i = 0; i < data.length; i++) {
+
+        if (data[i].name !== currentServer[i]) {
+          $('#input_subdiv_edit').append(
+            `<option value='${data[i].name}'>${data[i].name}</option>`
+          )
+        }
+      }
+
+    });
+    $('#input_subdiv_edit').on('change', function () {
+      let value = $('#input_subdiv_edit').val();
+      socket.emit('subdiv_edit_get_servers_forTree', value);
+    });
+    $('#user_edit_servers').on('change', function () {
+
+      let editServer = $('#user_edit_servers');
+      if (editServer) {
+
+        // console.log('mem', value);
+        let value = $('#user_edit_servers').val();
+        let fullArray = new Array;
+        if (value === undefined) {} else {
+          let city = $('#user_edit_city').val();
+          let complex = $('#user_edit_complex').val();
+          let subdiv = $('#user_edit_subdiv').val();
+          let servers = $('#user_edit_servers').val();
+
+          let sendObject = {
+            city,
+            complex,
+            subdiv,
+            servers
+
+          };
+          // const complex = $('#input_complex_edit_subdiv').val();
+          // const complex = $('#input_complex_edit_subdiv').val();
+          // socket.emit('subdiv_edit_get_name_servers', complex);
+          socket.emit('user_edit_get_servers_forTree', sendObject);
+        }
+      }
+    });
+
+    setTimeout(() => {
+      let editServer = $('#input_subdiv_edit');
+      if (editServer) {
+        let value1 = $('#input_subdiv_edit').val();
+        // console.log('mem', value);
+
+        let fullArray = new Array;
+        if (value1 === undefined) {} else {
+          const complex = $('#input_complex_edit_subdiv').val();
+          socket.emit('subdiv_edit_get_name_servers', complex);
+          socket.emit('subdiv_edit_get_servers_forTree', value1);
+        }
+      }
+    }, 100);
+    setTimeout(() => {
+      let editServer = $('#user_edit_servers');
+      if (editServer) {
+
+        // console.log('mem', value);
+        let value = $('#user_edit_servers').val();
+        let fullArray = new Array;
+        if (value === undefined) {} else {
+          let city = $('#user_edit_city').val();
+          let complex = $('#user_edit_complex').val();
+          let subdiv = $('#user_edit_subdiv').val();
+          let servers = $('#user_edit_servers').val();
+
+          let sendObject = {
+            city,
+            complex,
+            subdiv,
+            servers
+
+          };
+          // const complex = $('#input_complex_edit_subdiv').val();
+          // const complex = $('#input_complex_edit_subdiv').val();
+          // socket.emit('subdiv_edit_get_name_servers', complex);
+          socket.emit('user_edit_get_servers_forTree', sendObject);
+        }
+      }
+    }, 100);
+
+
+    // $('#input_subdiv_edit').on('cnahge', function () {
+    //   // добавляем новую ветку
+
+    // });
+    $('#buttonTree').on('click', async function () {
+
+      const res = JSON.stringify(resultTree);
+      console.log('RES', res);
+      $('#qqq').val(res);
+
+    });
+    $('#editUserButton').on('click', async function () {
+
+      const res = JSON.stringify(resultSaveTree);
+      console.log('RES', res);
+      $('#editPairs').val(res);
+
+    });
+
+
+    $('#buttonAddUser').on('click', async function () {
+
+      const res = JSON.stringify(resultTreeForUser);
+      $('#pairs').val(res);
+
+    });
+    $('#buttonEditTree').on('click', async function () {
+
+      const res = JSON.stringify(resultEditTree);
+      console.log('res123', res);
+      $('#qqqEdit').val(res);
+
+    });
+    $('#subdiv_add_servers').on('change', function () {
+
+      let servers = $('#subdiv_add_servers').val();
+      // $('#subdiv_add_servers').prop('disabled', false);
+      socket.emit('subdiv_get_name_servers_forTree', servers);
+      if (servers) {} else {
+        $('#subdiv_add_servers').empty();
+        // $('#subdiv_add_servers').prop('disabled', true);
+      }
+
+    });
+    $('#user_add_servers').on('change', function () {
+      let city = $('#user_add_city').val();
+      let complex = $('#user_add_complex').val();
+      let subdiv = $('#user_add_subdiv').val();
+      let servers = $('#user_add_servers').val();
+
+      let sendObject = {
+        city,
+        complex,
+        subdiv,
+        servers
+
+      };
+
+      socket.emit('user_get_name_servers_forTree', sendObject);
+      if (servers) {} else {
+        $('#user_add_servers').empty();
+        // $('#subdiv_add_servers').prop('disabled', true);
+      }
+    })
+    // 
+    // !!!! SOCKETS
+    ///////////////////////////////////////////////////////////////////////////////////
+    $('#server_add_complex').prop('disabled', true);
+    $('#subdiv_add_complex').prop('disabled', true);
+    $(
+      '#subdiv_add_servers').prop('disabled', true);
+
+
+
+
+
+
+
+    // $('#ip_server').mask('0hh.0hh.0hh.0hh');
+
+    // $().mask('099.099.099.099');
+
+    // var source = document.getElementById("userData");
+    // console.log(theTemplateScript);
+    $('#saveSettings').prop('disabled', true);
+    $('#saveSettings').on('click', function (e) {
+
+      // let formText = new FormData(document.getElementById('form_settings'))
+      // console.log($('#form_settings'));
+      // let formText = $('#form_settings').serializeArray();
+      let formText = $('#form_settings').serializeArray().reduce(function (obj, item) {
+        obj[item.name] = item.value;
+        return obj
+      });
+      // console.log(formText);
+      // $('#myModal').modal('hide');
+      $('#myModal .close').click();
+    })
+
+    $('#allServers').on('click', function () {
+      $('#saveSettings').prop('disabled', false);
+      $('#servers input:checkbox').prop('checked', true);
+    });
+    $('#selectServers').on('click', function () {
+      $('#saveSettings').prop('disabled', true);
+      $('#servers input:checkbox').prop('checked', false);
+    })
+
+
+    $('.flat2').each(function (index) {
+      $(this).on('click', function () {
+        if ($(this).is(':checked')) {
+          if ($('.flat2:checked').length > 0) {
+            // console.log('поставили');
+            $('#saveSettings').prop('disabled', false);
+          }
+        } else {
+          if ($('.flat2:checked').length < 1) {
+            // console.log('убрали');
+            $('#saveSettings').prop('disabled', true);
+          }
+
+        }
+      })
+    });
+    $('#checkConnection').on('click', async function (e) {
+      console.log('НАЖАЛ');
+      e.preventDefault();
+      $('#checkConnectionTrue').hide();
+      $('#checkConnectionFalse').hide();
+      $('#loadingConnection').show();
+      $('#checkConnection').prop('disabled', true);
+      let $btn1 = $(this).button('Проверка');
+      const languageCheck = await checkInAddServer();
+      // let selectOriginal = $('#input_servers');
+      let option;
+      option = document.createElement('option');
+      if (languageCheck) {
+        $('#input_servers').prop('disabled', false);
+        languageCheck.langs.forEach(element => {
+          let findElement = languageCheck.pairs.find(item => item.first ===
+            element.code);
+          let findAgain = languageCheck.pairs.find(item => item.second === element
+            .code)
+          if (findElement.first === findAgain.second && findElement.second ===
+            findAgain.first) {
+            let fEf, fAs, fEs, fAf;
+            fEf = findElement.first;
+            fAs = findAgain.second;
+            fEs = findElement.second;
+            fAf = findAgain.first;
+            let findElementNameFirst = languageCheck.langs.find(item => item
+              .code === fEf).name;
+            let findElementNameSecond = languageCheck.langs.find(item => item
+              .code === fEs).name;
+            let findAgainNameFirst = languageCheck.langs.find(item => item
+              .code === fAf).name;
+            let findAgainNameSecond = languageCheck.langs.find(item => item
+              .code === fAs).name;
+            $('#input_servers').append(
+              `<option value='${fEf}/${fEs}'>${findElementNameFirst} - ${findElementNameSecond}</option>`
+            )
+            $('#input_servers').append(
+              `<option value='${fAf}/${fAs}'>${findAgainNameFirst} - ${findAgainNameSecond}</option>`
+            )
+          }
+        });
+      }
+      $btn1.button('reset');
+      $('#checkConnection').prop('disabled', false);
+    });
+    $('#input_servers').prop('disabled', true);
+
+
+
+
+
+    async function checkInAddServer() {
+      const ip = $('#ip_server').val();
+      const port = $('#port').val();
+      try {
+        let response = await fetch(`http://${ip}:${port}/info`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+          }
+
+        });
+        let result = await response.json();
+
+        if (result) {
+          $('#loadingConnection').hide();
+          $('#checkConnectionTrue').show();
+          $('#checkConnectionFalse').hide();
+
+        } else {
+          $('#loadingConnection').hide();
+          $('#checkConnectionTrue').hide();
+          $('#checkConnectionFalse').show();
+        }
+        return result;
+      } catch (error) {
+        $('#loadingConnection').hide();
+        $('#checkConnectionTrue').hide();
+        $('#checkConnectionFalse').show();
+      }
+    }
+
+  });
+</script>
+{{#if translate}}
+  <script>
+    $('#button_translate').prop('disabled', true);
+    $('#button_translate').on('click', async function () {
+      let text_original = $('#text_original').val();
+      let $btn = $(this).button('loading');
+      let originalLang, translateLang;
+      originalLang = $('#languageOriginal').val();
+      translateLang = $('#languageTranslate').val();
+
+      await sendText(text_original, originalLang, translateLang);
+      $btn.button('reset');
+    })
+
+    async function sendText(text_original, languageOriginal, languageTranslate) {
+
+      let message = {
+        'id': '1',
+        'title': 'test',
+        'author': 'test1',
+        'etw': '30',
+        'original': `${languageOriginal}`,
+        'translate': `${languageTranslate}`,
+        'system': 'testsystem',
+        'text': `${text_original}`,
+      }
+      let sendMessage = JSON.stringify(message);
+      let response = await fetch('http://192.168.12.8:8081/', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: sendMessage,
+      })
+      let result = await response.json();
+      let output = result.text;
+      $('#text_translate').val(output);
+    }
+    let languages;
+    let checkConnection = true;
+
+    async function getLanguage() {
+      languages = await sendGet();
+      if (checkConnection) {
+        let selectOriginal = $('#languageOriginal');
+        let option;
+        option = document.createElement('option');
+        $('#languageOriginal').append(`<option></option>`)
+        languages.langs.forEach(element => {
+          $('#languageOriginal').append(
+            `<option value='${element.code}'>${element.name}</option>`)
+        });
+      }
+    }
+
+    async function sendGet() {
+      try {
+        let response = await fetch("http://192.168.12.8:8081/info", {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+          }
+        });
+        let result = await response.json();
+        return result;
+      } catch (error) {
+        checkConnection = false;
+        toastr.error('Подключение к серверу ПЛО отсутствует')
+        // console.log('error', error);
+      }
+    }
+    getLanguage();
+
+    $('#languageTranslate').prop('disabled', true);
+    $('#languageOriginal').on('change', function () {
+      $('#button_translate').prop('disabled', false);
+      $('#languageTranslate').empty();
+      if ($('#languageOriginal').val() === '') {
+        $('#languageTranslate').prop('disabled', true);
+      } else {
+        const first = $('#languageOriginal').val();
+        let findPairs = languages.pairs.filter(item => item.first === first)
+        $('#languageTranslate').prop('disabled', false);
+        findPairs.forEach(element => {
+          let nameLanguage = languages.langs.find(item => item.code === element.second);
+          $('#languageTranslate').append(
+            `<option value='${nameLanguage.code}'>${nameLanguage.name}</option>`)
+        })
+      }
+    });
+
+
+
+
+    // tabs task
+    // $('#home').click(function (e) {
+    //   e.preventDefault()
+    //   console.log('test1');
+    //   $(this).tab('show')
+    // });
+  </script>
+{{/if}}
+{{#if server_edit}}
+  <script>
+    async function serverEdit() {
+      try {
+        console.log('111');
+        const ip = `{{server.ip}}`;
+        const port = `{{server.port}}`;
+        let response = await fetch(`http://${ip}:${port}/info`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+          }
+
+        });
+        let languageCheck = await response.json();
+        if (languageCheck) {
+          let selectedServers = $('#input_servers_edit').val();
+          languageCheck.langs.forEach(element => {
+            let findElement = languageCheck.pairs.find(item => item.first === element.code);
+            let findAgain = languageCheck.pairs.find(item => item.second === element.code)
+            if (findElement.first === findAgain.second && findElement.second === findAgain
+              .first) {
+              let fEf, fAs, fEs, fAf;
+              fEf = findElement.first;
+              fAs = findAgain.second;
+              fEs = findElement.second;
+              fAf = findAgain.first;
+              let findElementNameFirst = languageCheck.langs.find(item => item.code === fEf)
+                .name;
+              let findElementNameSecond = languageCheck.langs.find(item => item.code === fEs)
+                .name;
+              let findAgainNameFirst = languageCheck.langs.find(item => item.code === fAf)
+                .name;
+              let findAgainNameSecond = languageCheck.langs.find(item => item.code === fAs)
+                .name;
+              let temp = `${fEf}/${fEs}`;
+              let temp2 = `${fAf}/${fAs}`;
+
+
+              let find1 = selectedServers.find(item => item === temp)
+              if (!find1) {
+                let find2 = selectedServers.find(item => item === temp2)
+                if (!find2) {
+                  $('#input_servers_edit').append(
+                    `<option value='${fEf}/${fEs}'>${findElementNameFirst} - ${findElementNameSecond}</option>`
+                  )
+                  $('#input_servers_edit').append(
+                    `<option value='${fAf}/${fAs}'>${findAgainNameFirst} - ${findAgainNameSecond}</option>`
+                  )
+                }
+
+              } else {
+                let find3 = selectedServers.find(item => item === temp2);
+                if (!find3) {
+                  $('#input_servers_edit').append(
+                    `<option value='${fAf}/${fAs}'>${findAgainNameFirst} - ${findAgainNameSecond}</option>`
+                  )
+                }
+              }
+            }
+          });
+
+
+        }
+        console.log('val', $('#input_servers_edit').val());
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    serverEdit();
+  </script>
 {{/if}}
 
 </html>

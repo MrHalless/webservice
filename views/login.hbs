@@ -1,72 +1,57 @@
-<div class="limiter blue-gradient color-block">
-  <div class="container-login100 ">
-    <div class="wrap-login100">
-      <div class="login100-pic js-tilt" data-tilt>
-        <img src="/images/login.png" alt="IMG">
-      </div>
-      <form class="login100-form validate-form" method="POST">
-        <span class="login100-form-title">
-          <h3>Авторизация</h3>
-        </span>
-        <div class="wrap-input100 validate-input">
-          <input id="login" class="input100" type="text" name="login" placeholder="Логин">
-          <span class="focus-input100"></span>
-          <span class="symbol-input100">
-            <i class="fa fa-user" aria-hidden="true"></i>
-          </span>
-        </div>
-        <div class="wrap-input100 validate-input" data-validate="Password is required">
-          <input id="password" class="input100" type="password" name="password" placeholder="Пароль">
-          <span class="focus-input100"></span>
-          <span class="symbol-input100">
-            <i class="fa fa-lock" aria-hidden="true"></i>
-          </span>
-        </div>
-        <input type="hidden" name="_csrf" value="{{ csrf }}" />
-        <div class="container-login100-form-btn">
-          <button class="login100-form-btn" type="submit">
-            Войти
-          </button>
-        </div>
-        <div class="text-center p-t-12">
-        </div>
-        <div class="text-center p-t-136">
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!-- <body class="login_page">
-  <div class="login_wrapper">
-    <div class="animate form sss">
-      <section class="login_content">
-        <form class="login__form" method="POST">
-          <h1 class="login__h1">Авторизация</h1>
-          <div class="" style="margin-top: 20px">
-            <input id="login" name="login" type="text" class="form-control validate" placeholder="Логин" required />
-          </div>
-          <div>
-            <input id="password" name="password" type="password" class="form-control validate" placeholder="Пароль"
-              required />
-          </div>
-          <input type="hidden" name="_csrf" value="{{ csrf }}" />
-          <div>
-            <button class="btn btn-success button__login" type="submit">
-              Войти
-            </button>
-          </div>
-          <div class="clearfix"></div>
-        </form>
-      </section>
-    </div>
-  </div>
-  
-</body> -->
 <div>
-  <div class="hoja">
-    <span class="hoja__text"> АПК </span>
-  </div>
   <div class="text_logo">
-    <h1>АМЕЗИТ</h1>
+    <h1 style="text-align: center; font-size: 50px; padding-top: 50px; color: #FFF">ПЛО</h1>
   </div>
 </div>
+<!-- /.container -->
+<div class="body_container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+        <form class="form-horizontal" method="POST">
+          <span class="heading">АВТОРИЗАЦИЯ</span>
+          <div class="form-group">
+            <input id="login" class="form-control" type="text" name="login" placeholder="Логин" />
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="form-group help">
+            <input type="password" class="form-control" id="password" placeholder="Пароль" name="password" />
+            <i class="fa fa-lock"></i>
+          </div>
+          <div class="form-group">
+            <input type="hidden" name="_csrf" value="{{ csrf }}" />
+            <button type="submit" class="btn btn-default">ВХОД</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+</div>
+<!-- /.container -->
+<!-- <body class="login_page">
+    <div class="login_wrapper">
+      <div class="animate form sss">
+        <section class="login_content">
+          <form class="login__form" method="POST">
+            <h1 class="login__h1">Авторизация</h1>
+            <div class="" style="margin-top: 20px">
+              <input id="login" name="login" type="text" class="form-control validate" placeholder="Логин" required />
+            </div>
+            <div>
+              <input id="password" name="password" type="password" class="form-control validate" placeholder="Пароль"
+                required />
+            </div>
+            <input type="hidden" name="_csrf" value="{{ csrf }}" />
+            <div>
+              <button class="btn btn-success button__login" type="submit">
+                Войти
+              </button>
+            </div>
+            <div class="clearfix"></div>
+          </form>
+        </section>
+      </div>
+    </div>
+    
+  </body> -->

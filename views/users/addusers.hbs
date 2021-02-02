@@ -1,285 +1,135 @@
-<div class="">
-  <!-- <div class="page-title">
-      <div class="title_left">
-        <h3>Добавление пользователя</h3>
-      </div>
-    </div> -->
-
-  <div class="clearfix"></div>
-  <div class="row">
-    <div class="col-md-12 col-sm-12">
-      <div class="x_panel">
-        <div class="x_title">
-          <h2>Добавление пользователя</h2>
-          <div class="clearfix"></div>
-        </div>
-        <div class="x_content">
-          <form class="" action="" method="POST" novalidate="">
-            <div class="col-md-12">
+<div class="col-md-12 col-sm-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <h1>Добавление пользователя</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <div class="container-fluid" style="background-color: #FFF;">
+        <form class="" action="" method="POST">
+          <div class="col-md-12">
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Фамилия<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="surname" type="text" name="surname" required="required"
+                  placeholder="Введите фамилию" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Имя<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="name" type="text" name="name" required="required"
+                  placeholder="Введите имя" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Отчество<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="patronymic" type="text" name="patronymic" required="required"
+                  placeholder="Введите отчество" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Роль:<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="template" style="width: 100%" id="template" class="form-control">
+                  {{#if access.length}}
+                    {{#each access}}
+                      <option value="{{ template }}">{{ name }}</option>
+                    {{/each}}
+                  {{/if}}
+                </select>
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Тип учетной записи:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="typeAccount" style="width: 100%" id="typeAccount" class="form-control">
+                  <option value="Локальная">Локальная</option>
+                  <option value="Доменная">Доменная</option>
+                </select>
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Логин<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="login" type="text" name="login" required="required"
+                  placeholder="Введите логин" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Пароль<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" type="password" id="password" name="password" placeholder="Введите пароль"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*]).{8,}"
+                  title="Минимум 8 символов, включая заглавные и строчные буквы, цифры и уникальный символ"
+                  required="" />
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Город:<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="city" style="width: 100%" id="user_add_city" class="form-control">
+                  <option></option>
+                  {{#if filterCity.length}}
+                    {{#each filterCity}}
+                      <option value="{{ this }}">{{ this }}</option>
+                    {{/each}}
+                  {{/if}}
+                </select>
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Комплекс:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="complex" style="width: 100%" id="user_add_complex" class="form-control">
+                </select>
+              </div>
+            </div>
+            <div class="row " style="padding-top: 15px;">
               <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Тип аккаунта:<span class="required">*</span></label
-                >
+                <label class="col-form-label col-md-3 col-sm-3 label-align">Подразделение:<span
+                    class="required">*</span></label>
                 <div class="col-md-6 col-sm-6">
-                  <select
-                    name="typeUser"
-                    style="width: 100%"
-                    id="typeUser"
-                    class="form-control"
-                  >
-                    <option value="Admin">Администратор</option>
-                    <option value="Operator">Оператор переводчик</option>
-                    <option value="Pr">Для презентации</option>
+                  <select name="subdiv" style="width: 100%" id="user_add_subdiv" class="form-control">
                   </select>
-                </div>
-              </div>
-              <!-- <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Имя<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <input
-                    class="form-control"
-                    data-validate-length-range="6"
-                    data-validate-words="2"
-                    name="name"
-                    placeholder="Иван"
-                    required="required"
-                  />
-                </div>
-              </div>
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Фамилия<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <input
-                    class="form-control"
-                    name="surname"
-                    data-validate-length-range="5,15"
-                    type="text"
-                    placeholder="Иванов"
-                    required="required"
-                  />
-                </div>
-              </div>
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Отчество<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <input
-                    class="form-control"
-                    name="midname"
-                    required="required"
-                    type="text"
-                    placeholder="Иванович"
-                  />
-                </div>
-              </div> -->
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Логин<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <input
-                    class="form-control"
-                    id="login"
-                    type="text"
-                    name="login"
-                    required="required"
-                    placeholder="Введите логин"
-                  />
-                </div>
-              </div>
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Пароль<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <input
-                    class="form-control"
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Введите пароль"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*]).{8,}"
-                    title="Минимум 8 символов, включая заглавные и строчные буквы, цифры и уникальный символ"
-                    required=""
-                  />
-
-                  <span
-                    style="position: absolute; right: 15px; top: 7px"
-                    onclick="hideshow()"
-                  >
-                    <i id="slash" class="fa fa-eye-slash"></i>
-                    <i id="eye" class="fa fa-eye"></i>
-                  </span>
-                </div>
-              </div>
-              <!-- <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Повторите пароль<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <input
-                    class="form-control"
-                    type="password"
-                    name="password2"
-                    data-validate-linked="password"
-                    required="required"
-                  />
-                </div>
-              </div>
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Город:<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <select
-                    name="city"
-                    style="width: 100%"
-                    id="id_city"
-                    class="form-control"
-                  >
-                    <option value="A">Ростов-на-Дону</option>
-
-                    <option value="M">Москва</option>
-
-                    <option value="T">Новочеркаск</option>
-                  </select>
-                </div>
-              </div>
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Войсковая часть:<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <select
-                    name="city"
-                    style="width: 100%"
-                    id="id_city"
-                    class="form-control"
-                  >
-                    <option value="A">535633</option>
-
-                    <option value="M">323423</option>
-
-                    <option value="T">323232</option>
-                  </select>
-                </div>
-              </div>
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Комплекс:<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <select
-                    name="city"
-                    style="width: 100%"
-                    id="id_city"
-                    class="form-control"
-                  >
-                    <option value="A">Амезит-Т</option>
-
-                    <option value="M">Амезит-Ц</option>
-
-                    <option value="T">Амезит-ОУ</option>
-                  </select>
-                </div>
-              </div>
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Подразделение:<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <select
-                    name="city"
-                    style="width: 100%"
-                    id="id_city"
-                    class="form-control"
-                  >
-                    <option value="A">Подразделение 122</option>
-
-                    <option value="M">подразделение 422</option>
-
-                    <option value="T">Подразделение 33</option>
-                  </select>
-                </div>
-              </div>
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Доступные сервера:<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <select
-                    name="city"
-                    style="width: 100%"
-                    id="id_city"
-                    class="form-control"
-                  >
-                    <option value="A">Сервер 21</option>
-
-                    <option value="M">Сервер 11</option>
-
-                    <option value="T">Сервер 2</option>
-                  </select>
-                </div>
-              </div>
-              <div class="field item form-group">
-                <label class="col-form-label col-md-3 col-sm-3 label-align"
-                  >Доступные языки:<span class="required">*</span></label
-                >
-                <div class="col-md-6 col-sm-6">
-                  <select
-                    name="city"
-                    style="width: 100%"
-                    id="id_city"
-                    class="form-control"
-                  >
-                    <option value="A">Английский</option>
-
-                    <option value="M">Арабский</option>
-
-                    <option value="T">Украинский</option>
-                  </select>
-                </div>
-              </div> -->
-              <input type="hidden" name="_csrf" value="{{ csrf }}" />
-              <div class="modal-footer" style="margin-bottom: -30px">
-                <div class="field form-group">
-                  <div class="col-md-12">
-                    <a href="/users" class="btn btn-danger"> Отмена </a>
-
-                    <button type="submit" class="btn btn-success">
-                      Добавить
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
-          </form>
-        </div>
+            <div class="row " style="padding-top: 15px;">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align">Серверы:<span
+                    class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <select multiple name="servers" style="width: 100%; height: inherit;" id="user_add_servers"
+                    class="form-control" required>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row " style="padding-top: 15px; padding-bottom: 15px;">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align">Языковые пары:<span
+                    class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <div class="container" name="tree" id="userTree"></div>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="pairs" id="pairs" />
+            <input type="hidden" name="_csrf" value="{{ csrf }}" />
+            <div class="field form-group" style="float: right; padding-top: 15px;">
+              <div class="col-md-12" style="padding-right: 0 !important;">
+                <a href="/users" class="btn btn-danger"> Отмена </a>
+                <button type="submit" id="buttonAddUser" class="btn btn-success">Добавить</button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
-<script>
-  function hideshow() {
-    var password = document.getElementById('password1');
-    var slash = document.getElementById('slash');
-    var eye = document.getElementById('eye');
-
-    if (password.type === 'password') {
-      password.type = 'text';
-      slash.style.display = 'block';
-      eye.style.display = 'none';
-    } else {
-      password.type = 'password';
-      slash.style.display = 'none';
-      eye.style.display = 'block';
-    }
-  }
-  // initialize a validator instance from the "FormValidator" constructor.
-  // A "<form>" element is optionally passed as an argument, but is not a must
-</script>

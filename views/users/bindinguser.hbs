@@ -1,0 +1,90 @@
+<div class="col-md-12 col-sm-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <h1>Связывание доменной учетной записи</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      {{#if find}}
+        <div class="container">
+          <form class="accesscontrolForm" action="untieuser" method="POST">
+            <div class="col-md-12" style="background-color: #FFF; padding-top: 15px;">
+              <div class="row" style="padding-bottom: 15px;">
+                <div class="field item form-group pt-3 pb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align">Учетная запись в Active Directory:<span
+                      class="required">*</span></label>
+                  <div class="col-md-3 col-sm-3">
+                    <select name="userDomain" style="width: 100%" id="userDomain" class="form-control">
+                      <option value="{{ find.userDomain }}">
+                        {{ findName }}
+                      </option>
+                    </select>
+                  </div>
+                  <label class="col-form-label col-md-3 col-sm-3 label-align">Доменная учетная запись в ПЛО:<span
+                      class="required">*</span></label>
+                  <div class="col-md-3 col-sm-3">
+                    <select name="userLocal" style="width: 100%" id="userLocal" class="form-control">
+                      <option value="{{ findUserLocal.login }}">
+                        {{ findUserLocal.login }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="_csrf" value="{{ csrf }}" />
+              <div class="row">
+                <div class="field form-group" style="float: right; padding-top: 30px;">
+                  <div class="col-md-12">
+                    <a href="/users" class="btn btn-danger"> Отмена </a>
+                    <button type="submit" class="btn btn-primary accesscontrol_btn">
+                      Отвязать
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      {{else}}
+        <div class="container">
+          <form class="accesscontrolForm" action="binduser" method="POST">
+            <div class="col-md-12" style="background-color: #FFF; padding-top: 30px;">
+              <div class="row" style="padding-bottom: 15px;">
+                <div class="field item form-group pt-3 pb-3">
+                  <label class="col-form-label col-md-3 col-sm-3 label-align">Учетная запись в Active Directory:<span
+                      class="required">*</span></label>
+                  <div class="col-md-3 col-sm-3">
+                    <select name="userDomain" style="width: 100%" id="userDomain" class="form-control">
+                      <option></option>
+                      {{#eachInMap map}}
+                        <option value="{{ value }}">{{ key }}</option>
+                      {{/eachInMap}}
+                    </select>
+                  </div>
+                  <label class="col-form-label col-md-3 col-sm-3 label-align">Доменная учетная запись в ПЛО:<span
+                      class="required">*</span></label>
+                  <div class="col-md-3 col-sm-3">
+                    <select name="userLocal" style="width: 100%" id="userLocal" class="form-control">
+                      <option value="{{ findUserLocal.login }}">
+                        {{ findUserLocal.login }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="_csrf" value="{{ csrf }}" />
+              <div class="field form-group" style="float: right; padding-top: 30px;">
+                <div class="col-md-12">
+                  <a href="/users" class="btn btn-danger"> Отмена </a>
+                  <button type="submit" class="btn btn-success accesscontrol_btn">
+                    Привязать
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

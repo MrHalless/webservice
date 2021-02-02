@@ -1,0 +1,54 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <!--#my-modal -->
+      <h1>Перевод текста</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="tab-content" style="height: 80vh" style="background-color: #FFF;">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="btn-group">
+            <div class="" style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="" style="margin-right: 20px;">Язык оригинального текста</span>
+              <select name="" id="languageOriginal" style="width: 200px; float: right;" class="form-control">
+                <!-- ВВодим сюда языки -->
+              </select>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+              </div>
+            </div>
+          </div>
+          <div class="btn-group" style="float: right;">
+            <div class="" style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="" style="margin-right: 20px;">Язык перевода</span>
+              <select name="" id="languageTranslate" style="width: 200px; float: right;" class="form-control">
+                <!-- ВВодим сюда языки -->
+              </select>
+            </div>
+            <!-- <select type="text" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" style="float: right; border-radius: 4px">
+            </select> -->
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 10px">
+        <div class="col-md-5 col-sm-5">
+          <textarea class="form-control" id="text_original" style="height: 500px; resize: none"
+            placeholder="Введите текст..."></textarea>
+        </div>
+        <div class="col-md-2 col-sm-2"
+          style="display: flex; justify-content: center; height: 500px; align-items: center;">
+          <button type="button" class="btn btn-success" id="button_translate" data-loading-text="Перевод... <i
+            class='fa fa-spinner fa-spin' style='color:#000;'></i>">
+            Перевести
+          </button>
+        </div>
+        <div class="col-md-5 col-sm-5">
+          <textarea class="form-control" id="text_translate" style="height: 500px; resize: none"
+            placeholder="Перевод..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

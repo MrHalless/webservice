@@ -1,0 +1,102 @@
+<!-- <div class=""> -->
+<!-- <div class="page-title">
+          <div class="title_left">
+            <h3>Добавление пользователя</h3>
+          </div>
+        </div> -->
+<!-- <div class="clearfix"></div> -->
+<!-- <div class="row"> -->
+<div class="col-md-12 col-sm-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <h1>Редактирование сервера</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <form class="" action="" method="POST">
+        <div class="col-md-12" style="background-color: #FFF;">
+          <div class="row" style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Название сервера:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="name" type="text" name="name" required="required"
+                  placeholder="Введите сервер" value="{{ server.name }}" />
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Наименование комплекса:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="complex" type="text" name="complex" required="required"
+                  placeholder="Введите комплекс" value="{{ server.complex }}" />
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Город:<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="city" type="text" name="city" required="required"
+                  placeholder="Введите город" value="{{ server.city }}" />
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">IP адрес:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="ip" type="text" name="ip" required="required" placeholder="Введите IP"
+                  value="{{ server.ip }}" />
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Порт:<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="port" type="text" name="port" required="required"
+                  placeholder="Введите порт" value="{{ server.port }}" />
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 15px;padding-bottom: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-2 col-sm-2 label-align">Доступные языки:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select multiple name="languages" style="width: 100%" id="input_servers_edit" class="form-control">
+                  {{#each server.languages}}
+                    <option selected value="{{this.first}}/{{this.second}}">
+                      {{this.firstDescription}}-{{this.secondDescription}}</option>
+                  {{/each}}
+                </select>
+                <!-- {{#if data.length}}
+                    {{#each data}}
+                      {{#if (checkLanguagesPairs @root.templateCheck name )}}
+                        <option selected value="{{ name }}">{{ name }}</option>
+                      {{else}}
+                        <option value="{{ name }}">{{ name }}</option>
+                      {{/if}}
+                    {{/each}}
+                  {{/if}} -->
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="_csrf" value="{{ csrf }}" />
+          <div class="field form-group" style="float: right; padding-top: 15px;">
+            <div class="col-md-12" style="padding-right: 0 !important;">
+              <a href="/servers" class="btn btn-danger"> Отмена </a>
+              <button type="submit" class="btn btn-success">Сохранить</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- </div>
+</div> -->

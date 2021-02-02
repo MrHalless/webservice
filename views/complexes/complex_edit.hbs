@@ -1,0 +1,48 @@
+<!-- <div class="">
+  <div class="clearfix"></div>
+  <div class="row"> -->
+<div class="col-md-12 col-sm-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <h1>Редактирование комплекса</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="tab-content">
+      <div class="row" style="background-color: #FFF;">
+        <form class="" action="" method="POST">
+          <div class="col-md-12">
+            <div class="row" style="padding-top: 15px;">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-2 col-sm-2 label-align">Наименование комплекса:<span
+                    class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <input class="form-control" id="name" type="text" name="name" required="required"
+                    placeholder="Введите комплекс" value="{{ complex.name }}" />
+                </div>
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;padding-bottom: 15px;">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-2 col-sm-2 label-align">Город:<span
+                    class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <input class="form-control" id="city" type="text" name="city" required="required"
+                    placeholder="Введите город" value="{{ complex.city }}" />
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="_csrf" value="{{ csrf }}" />
+            <div class="field form-group" style="float: right; padding-top: 15px;">
+              <div class="col-md-12" style="padding-right: 0 !important;">
+                <a href="/complexes" class="btn btn-danger"> Отмена </a>
+                <button type="submit" class="btn btn-success">Сохранить</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div>
+</div> -->

@@ -1,0 +1,77 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <!--#my-modal -->
+      <h1>Статистика АПК</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="tab-content">
+      <!-- <div class="row">
+        <div class="page-title col-sm-12">
+          <a href="/complexes/complex_add" role="button" id="">
+            <button class="btn btn-success" style="float: right">
+              Добавить комплекс
+            </button>
+          </a>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-md-12">
+          <table id="table_complexes" class="table table-striped table-bordered dataTable no-footer" style="width: 100%"
+            role="grid" aria-describedby="datatable_info">
+            <thead>
+              <tr role="row">
+                <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                  aria-sort="ascending" aria-label="ID: активировать для сортировки столбца по убыванию"
+                  style="width: 10px; text-align: center">
+                  №
+                </th>
+                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                  aria-label="Наименование: активировать для сортировки столбца по убыванию"
+                  style="width: 150px; text-align: center">
+                  Наименование
+                </th>
+                <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                  aria-label="Город расположения: активировать для сортировки столбца по убыванию"
+                  style="width: 150px; text-align: center">
+                  Город расположения
+                </th>
+                <th class="" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
+                  aria-label="Подразделение: активировать для сортировки столбца по убыванию"
+                  style="width: 100px; text-align: center">
+                  Действия
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#if complexes.length}}
+                {{#each complexes}}
+                  <tr role="row" class="odd">
+                    <td class="sorting_1" style="text-align: center">
+                      {{counter @index}}
+                    </td>
+                    <td style="text-align: center">
+                      {{ name }}
+                    </td>
+                    <td style="text-align: center">
+                      {{ city }}
+                    </td>
+                    <td style="text-align: center; padding: 5px 0 0 0">
+                      <a href="/complexes/{{ _id }}/complex_edit" class="btn btn-primary btn-md" data-rel="tooltip"
+                        title="" data-original-title="Редактировать"><span class="glyphicon glyphicon-pencil"></span>
+                      </a>
+                      <a href="/complexes/{{ _id }}/complex_delete" class="btn btn-danger btn-md" data-rel="tooltip"
+                        title="" data-original-title="Удалить"><span class="glyphicon glyphicon-trash"
+                          style="color: #fff"></span>
+                      </a>
+                    </td>
+                  </tr>
+                {{/each}}
+              {{/if}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

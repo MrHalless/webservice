@@ -1,0 +1,111 @@
+<div class="col-md-12 col-sm-12">
+  <div class="x_panel">
+    <div class="page-title">
+      <h1>Добавление сервера</h1>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <form class="" action="" method="POST">
+        <div class="col-md-12" style="background-color: #FFF;">
+          <div class="row " style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Название сервера:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="name" type="text" name="name" required="required"
+                  placeholder="Введите сервер" />
+              </div>
+            </div>
+          </div>
+          <div class="row " style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Город:<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="city" style="width: 100%" id="server_add_city" class="form-control" required>
+                  <option></option>
+                  {{#if filterCity.length}}
+                    {{#each filterCity}}
+                      <option value="{{ this }}">{{ this }}</option>
+                    {{/each}}
+                  {{/if}}
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row " style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Наименование комплекса:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select name="complex" style="width: 100%" id="server_add_complex" class="form-control">
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding-top: 15px; ">
+            <div style="display: flex; flex-flow: column; ">
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align">IP адрес:<span
+                    class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <input class="form-control" id="ip_server" type="ip" name="ip" required="required"
+                    placeholder="Введите IP" />
+                </div>
+              </div>
+              <div class="field item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align">Порт:<span class="required">*</span></label>
+                <div class="col-md-6 col-sm-6">
+                  <input class="form-control" id="port" type="text" name="port" required="required"
+                    placeholder="Введите порт" />
+                </div>
+              </div>
+              <div class="field item form-group" style="display: flex; justify-content: flex-end;">
+                <div class="col-form-label col-md-3 col-sm-3 label-align">
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-primary btn-xs" id="checkConnection">Проверить
+                    подключение</button>
+                  <!-- <button type="button" class="btn btn-success" id="checkConnection" data-loading-text="Перевод... <i
+                  class='fa fa-spinner fa-spin' style='color:#000;'></i>">
+                      Перевести
+                    </button> -->
+                  <i class="fa fa-spinner fa-spin fa-lg" id="loadingConnection" style="display: none;"></i>
+                  <i class=" fa fa-check-circle fa-lg" id="checkConnectionTrue" style="color: green;display: none;"></i>
+                  <i class="fa fa-times-circle fa-lg" id="checkConnectionFalse" style="color: red; display: none;"></i>
+                </div>
+                <div class="col-md-3"></div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row " style="padding-top: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Порт:<span class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <input class="form-control" id="port" type="text" name="port" required="required"
+                  placeholder="Введите порт" />
+              </div>
+            </div>
+          </div> -->
+          <div class="row " style="padding-top: 15px; padding-bottom: 15px;">
+            <div class="field item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Языковые пары:<span
+                  class="required">*</span></label>
+              <div class="col-md-6 col-sm-6">
+                <select multiple name="languages" style="width: 100%; height: inherit;" id="input_servers"
+                  class="form-control">
+                </select>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="_csrf" value="{{ csrf }}" />
+          <div class="field form-group" style="float: right; padding-top: 15px;">
+            <div class="col-md-12" style="padding-right: 0 !important;">
+              <a href="/servers" class="btn btn-danger"> Отмена </a>
+              <button type="submit" class="btn btn-success">Добавить</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
