@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="col-md-12 col-sm-12">
   <div class="x_panel">
     <div class="page-title">
@@ -21,6 +22,51 @@
                     class="required">*</span></label>
                 <div class="col-md-3 col-sm-3">
                   <select name="template" style="width: 100%" id="template" class="form-control">
+=======
+<div class="">
+  <!-- <div class="page-title">
+            <div class="title_left">
+              <h3>Добавление пользователя</h3>
+            </div>
+          </div> -->
+
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Связывание роли</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          {{#if find}}
+          <form class="accesscontrolForm" action="untie" method="POST">
+            <div class="col-md-12">
+              <div class="field item form-group pt-3 pb-3">
+                <label class="col-form-label col-md-2 col-sm-2 label-align"
+                  >Группа в домене:<span class="required">*</span></label
+                >
+                <div class="col-md-3 col-sm-3">
+                  <select
+                    name="groupDomain"
+                    style="width: 100%"
+                    id="groupDomain"
+                    class="form-control"
+                  >
+                    <option value="{{ find }}">{{ find }}</option>
+                  </select>
+                </div>
+                <label class="col-form-label col-md-2 col-sm-2 label-align"
+                  >Роль:<span class="required">*</span></label
+                >
+                <div class="col-md-3 col-sm-3">
+                  <select
+                    name="template"
+                    style="width: 100%"
+                    id="template"
+                    class="form-control"
+                  >
+>>>>>>> master
                     <option value="{{ access.template }}">
                       {{ access.name }}
                     </option>
@@ -28,11 +74,23 @@
                 </div>
               </div>
               <input type="hidden" name="_csrf" value="{{ csrf }}" />
+<<<<<<< HEAD
               <div class="row">
                 <div class="field form-group" style="float: right; padding-top: 30px;">
                   <div class="col-md-12">
                     <a href="/accesscontrol" class="btn btn-danger"> Отмена </a>
                     <button type="submit" class="btn btn-primary accesscontrol_btn">
+=======
+              <div class="modal-footer" style="margin-bottom: -30px">
+                <div class="field form-group">
+                  <div class="col-md-12">
+                    <a href="/accesscontrol" class="btn btn-danger"> Отмена </a>
+
+                    <button
+                      type="submit"
+                      class="btn btn-dark accesscontrol_btn"
+                    >
+>>>>>>> master
                       Отвязать
                     </button>
                   </div>
@@ -40,6 +98,7 @@
               </div>
             </div>
           </form>
+<<<<<<< HEAD
         </div>
       {{else}}
         <div class="container">
@@ -67,17 +126,70 @@
                 <div class="col-md-3 col-sm-3">
                   <select name="template" style="width: 100%" id="template" class="form-control">
                     <option value="{{ access.name }}">
+=======
+          {{else}}
+          <form class="accesscontrolForm" action="bind" method="POST">
+            <div class="col-md-12">
+              <div class="field item form-group pt-3 pb-3">
+                <label class="col-form-label col-md-2 col-sm-2 label-align"
+                  >Группа в домене:<span class="required">*</span></label
+                >
+                <div class="col-md-3 col-sm-3">
+                  <select
+                    name="groupDomain"
+                    style="width: 100%"
+                    id="groupDomain"
+                    class="form-control"
+                  >
+                    {{#if find}}
+                    <option value="{{ find }}">{{ find }}</option>
+                    {{else}}
+
+                    <option></option>
+
+                    {{#if groups.length}}
+                    {{#each groups}}
+                    <option value="{{ this }}">{{ this }}</option>
+                    {{/each}}
+                    {{/if}}
+                    {{/if}}
+                  </select>
+                </div>
+                <label class="col-form-label col-md-2 col-sm-2 label-align"
+                  >Роль:<span class="required">*</span></label
+                >
+                <div class="col-md-3 col-sm-3">
+                  <select
+                    name="template"
+                    style="width: 100%"
+                    id="template"
+                    class="form-control"
+                  >
+                    <option value="{{ access.template }}">
+>>>>>>> master
                       {{ access.name }}
                     </option>
                   </select>
                 </div>
               </div>
               <input type="hidden" name="_csrf" value="{{ csrf }}" />
+<<<<<<< HEAD
               <div class="row">
                 <div class="field form-group" style="float: right; padding-top: 30px;">
                   <div class="col-md-12">
                     <a href="/accesscontrol" class="btn btn-danger"> Отмена </a>
                     <button type="submit" class="btn btn-primary accesscontrol_btn">
+=======
+              <div class="modal-footer" style="margin-bottom: -30px">
+                <div class="field form-group">
+                  <div class="col-md-12">
+                    <a href="/accesscontrol" class="btn btn-danger"> Отмена </a>
+
+                    <button
+                      type="submit"
+                      class="btn btn-success accesscontrol_btn"
+                    >
+>>>>>>> master
                       Привязать
                     </button>
                   </div>
@@ -85,8 +197,17 @@
               </div>
             </div>
           </form>
+<<<<<<< HEAD
         </div>
       {{/if}}
     </div>
   </div>
 </div>
+=======
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+>>>>>>> master

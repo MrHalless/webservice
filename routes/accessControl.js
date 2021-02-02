@@ -5,6 +5,7 @@ const checkAuth = require('../middleware/checkAuth');
 const Shell = require('node-powershell');
 const ActiveDirectory = require('activedirectory');
 const Binding = require('../models/binding');
+<<<<<<< HEAD
 const { checkAccess } = require('../middleware/checkAccess');
 
 router.get('/', checkAuth, async (req, res) => {
@@ -51,6 +52,28 @@ router.get('/accesscontrol_add', checkAuth, async (req, res) => {
     }
   }
 
+=======
+
+router.get('/', checkAuth, async (req, res) => {
+  const ListAccessControl = await AccessControl.find().lean();
+
+  res.render('accesscontrol/accesscontrol', {
+    title: 'Разграничение доступа',
+    ListAccessControl,
+    login: req.session.user,
+    success: req.flash('success'),
+    error: req.flash('error'),
+  });
+});
+
+router.get('/accesscontrol_add', checkAuth, (req, res) => {
+  res.render('accesscontrol/accesscontrol_add', {
+    title: 'Добавление роли',
+    login: req.session.user,
+    success: req.flash('success'),
+    error: req.flash('error'),
+  });
+>>>>>>> master
 });
 
 router.post('/accesscontrol_add', checkAuth, async (req, res) => {
@@ -237,6 +260,7 @@ router.post('/:id/accesscontrol_edit', async (req, res) => {
 });
 
 router.get('/:id/accesscontrol_edit', checkAuth, async (req, res) => {
+<<<<<<< HEAD
   const flag = await checkAccess(req);
   if (flag === false) {
     res.redirect('/error');
@@ -281,6 +305,26 @@ router.get('/:id/accesscontrol_delete', checkAuth, async (req, res) => {
   }
 
 
+=======
+  try {
+    const access = await AccessControl.findById(req.params.id).lean();
+    console.log(access);
+    res.render('accesscontrol/accesscontrol_edit', {
+      title: 'Редактирование роли',
+      login: req.session.user,
+      access,
+    });
+  } catch (error) {}
+});
+
+router.get('/:id/accesscontrol_delete', checkAuth, async (req, res) => {
+  try {
+    res.render('accesscontrol/accesscontrol_delete', {
+      title: 'Удаление роли',
+      login: req.session.user,
+    });
+  } catch (error) {}
+>>>>>>> master
 });
 
 router.post('/:id/accesscontrol_delete', checkAuth, async (req, res) => {
@@ -301,6 +345,7 @@ router.post('/:id/accesscontrol_delete', checkAuth, async (req, res) => {
 });
 
 router.get('/:id/binding', checkAuth, async (req, res) => {
+<<<<<<< HEAD
   const flag = await checkAccess(req);
   if (flag === false) {
     res.redirect('/error');
@@ -391,9 +436,85 @@ router.post('/:id/untie', checkAuth, async (req, res) => {
     await Binding.deleteOne({ template: deleteAccess.name });
     req.flash('success', 'Группа откреплена');
     res.redirect('/accesscontrol');
+=======
+  // тут загружаем группы из домена, которые у нас в главной группе PLO
+  const ps = new Shell({
+    executionPolicy: 'Bypass',
+    noProfile: true,
+  });
+  try {
+    // добавляют команду для powershell
+    // выводим на экран дочерние группы главной группы.
+    ps.addCommand(
+      `echo (Get-ADGroupMember -Identity 'Initialization' | where objectclass -eq 'group' | ft name)`
+    );
+    let groups = [];
+    await ps
+      .invoke()
+      .then((output) => {
+        let temp = output.trim().split('\r\n');
+        for (let i = 2; i < temp.length; i++) {
+          groups.push(temp[i].trim());
+        }
+        // console.log(groups);
+      })
+      .catch((err) => {
+        console.log('ошибка', err);
+      });
+
+    const access = await AccessControl.findById(req.params.id).lean();
+    const fullBinding = await Binding.find().lean();
+    console.log(fullBinding);
+    fullBinding.forEach((value) => {
+      groups = groups.filter((item) => item !== value.groupDomain);
+    });
+    const template = access.template;
+    console.log('роль', template);
+    // находим в привязке шаблон
+    const candidate = await Binding.findOne({ template }).lean();
+    let find;
+    if (candidate) {
+      find = candidate.groupDomain;
+    } else {
+      find = '';
+    }
+    res.render('accesscontrol/binding', {
+      title: 'Связывание',
+      access,
+      find,
+      groups,
+      login: req.session.user,
+    });
+>>>>>>> master
   } catch (error) {
     console.log(error);
   }
 });
 
+router.post('/:id/bind', checkAuth, async (req, res) => {
+  try {
+    const { groupDomain, template } = req.body;
+
+    const binding = new Binding({
+      groupDomain,
+      template,
+    });
+    await binding.save();
+    req.flash('success', 'Группа в домене приклеплена к роли');
+    res.redirect('/accesscontrol');
+  } catch (ereor) {
+    console.log(error);
+  }
+});
+
+router.post('/:id/untie', checkAuth, async (req, res) => {
+  try {
+    const deleteAccess = await AccessControl.findOne({ _id: req.params.id });
+    await Binding.deleteOne({ template: deleteAccess.template });
+    req.flash('success', 'Группа откреплена');
+    res.redirect('/accesscontrol');
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports = router;

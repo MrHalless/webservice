@@ -7,6 +7,7 @@ const {
   checkAccess
 } = require('../middleware/checkAccess');
 
+<<<<<<< HEAD
 router.get('/', checkAuth, async (req, res) => {
   const flag = await checkAccess(req);
   if (flag === false) {
@@ -55,6 +56,20 @@ router.get('/statistic', checkAuth, async (req, res) => {
       });
     }
   }
+=======
+router.get('/', checkAuth, (req, res) => {
+  res.render('pms', {
+    title: 'Приоретизация ПМС',
+    login: req.session.user,
+  });
+});
+
+router.get('/statistic', checkAuth, (req, res) => {
+  res.render('pms_statistic', {
+    title: 'Статистика ПМС',
+    login: req.session.user,
+  });
+>>>>>>> master
 });
 
 

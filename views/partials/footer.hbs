@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- ================== BEGIN BASE JS ================== -->
 <!-- <script src="/assets/plugins/pace/pace.min.js"></script> -->
 <script src="/assets/plugins/jquery/jquery-1.9.1.min.js"></script>
@@ -25,9 +26,16 @@
 <script src="/js/moment-with-locales.min.js"></script>
 <!-- <script src="/js/bootstrap.bundle.min.js"></script> -->
 <!-- <script src="/js/custom.min.js"></script> -->
+=======
+<script src="/js/jquery.min.js"></script>
+<script src="/js/moment.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/custom.min.js"></script>
+>>>>>>> master
 <script src="/js/toastr.min.js"></script>
 <!-- <script src="/js/tilt.jquery.min.js"></script>
 <script src="/js/app.js"></script>
+<<<<<<< HEAD
 <script src="/js/modal.js"></script> -->
 <script src="/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="/assets/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.ru.js">
@@ -54,25 +62,49 @@
 <script src="/js/dataTables.bootstrap.min.js"></script> -->
 <!-- <script src="/js/buttons.bootstrap.min.js"></script> -->
 <!-- <script src="/js/buttons.flash.min.js"></script>
+=======
+<script src="/js/modal.js"></script>
+<script src="/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/js/daterangepicker.js"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/dataTables.bootstrap.min.js"></script>
+<script src="/js/buttons.bootstrap.min.js"></script>
+<script src="/js/buttons.flash.min.js"></script>
+>>>>>>> master
 <script src="/js/buttons.html5.min.js"></script>
 <script src="/js/buttons.print.min.js"></script>  -->
 <!-- <script src="/js/dataTables.fixedHeader.min.js"></script>
 <script src="/js/dataTables.keyTable.min.js"></script>
 <script src="/js/dataTables.responsive.min.js"></script>
 <script src="/js/responsive.bootstrap.js"></script>
+<<<<<<< HEAD
 <script src="/js/dataTables.scroller.min.js"></script> -->
 <script src="/js/select2.full.min.js"></script>
 <script src="/js/daterangepicker.js"></script>
 <!-- <script src="/js/bootstrap-datetimepicker.min.js"></script> -->
+=======
+<script src="/js/dataTables.scroller.min.js"></script>
+<script src="/js/select2.full.min.js"></script>
+<script src="/js/daterangepicker.js"></script>
+<script src="/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/js/socket.io.js"></script>
+>>>>>>> master
 <script src="/js/handlebars.js"></script>
 <!-- <script src="/js/icheck.min.js"></script> -->
 <!-- <script src="/js/parsley.min.js"></script> -->
 <!-- <script src="/js/ru.js"></script> -->
 <script>
+<<<<<<< HEAD
   toastr.options.timeOut = 3000;
   // toastr.options.progressBar = true;
   toastr.options.closeButton = true;
   // toastr.error('Логин уже существует', 'Ошибка')
+=======
+    toastr.options.timeOut = 3000;
+    // toastr.options.progressBar = true;
+    toastr.options.closeButton = true;
+    // toastr.error('Логин уже существует', 'Ошибка')
+>>>>>>> master
 </script>
 {{#if error}}
   <script>
@@ -1522,5 +1554,269 @@
     serverEdit();
   </script>
 {{/if}}
+
+<script>
+
+    
+    
+
+</script>
+
+<script>
+    $(document).ready(function () {
+
+     
+        $('#datatable1').DataTable();
+        $('#datatable2').DataTable();
+        $('#datatable3').DataTable();
+        $('#datatable4').DataTable();
+        $('#datatable5').DataTable();
+        $('#table_logs').DataTable({
+            aoColumnDefs: [
+                { aTargets: [3], bSortable: false },
+            ]
+        });
+
+        $('#journal_apk').DataTable({
+            aoColumnDefs: [
+
+                { aTargets: [8, 9], bSortable: false },
+
+            ]
+        });
+        
+        $('#table_accesscontrol').DataTable({
+            aoColumnDefs: [
+                { aTargets: [3], bSortable: false },
+            ]
+        });
+        $('#table_complexes').DataTable({
+            aoColumnDefs: [
+                { aTargets: [4], bSortable: false },
+            ]
+        });
+        $('#settings_file_apk__file_info').DataTable({
+            "searching": false,
+            "bLengthChange": false,
+            aoColumnDefs: [
+                { aTargets: [0,1], bSortable: false },
+            ]
+        });
+        $('#settings_file_apk__log_info').DataTable({
+            aoColumnDefs: [
+                { aTargets: [3], bSortable: false },
+            ]
+        });
+        $('#table_result_setting_file_apk').DataTable({
+            "searching": false,
+            "bLengthChange": false,
+            aoColumnDefs: [
+                { aTargets: [0, 1], bSortable: false },
+
+            ]
+        });
+        $('#table_settings_file').DataTable({
+            "searching": false,
+            "iDisplayLength": 5,
+            "bLengthChange": false,
+            aoColumnDefs: [
+                { aTargets: [3], bSortable: false },
+            ]
+        });
+        
+        $('#table_servers').DataTable({
+            aoColumnDefs: [
+                { aTargets: [5], bSortable: false },
+
+            ]
+        });
+        $('#table_filehandling').DataTable({
+            aoColumnDefs: [
+                { aTargets: [2, 3, 4, 5, 6], bSortable: false },
+
+            ]
+        });
+
+        $('#languages').select2();
+        $('#input_servers').select2();
+        $('#Datepicker1').datetimepicker(
+            {
+                format: 'DD.MM.YYYY'
+            }
+        );
+        $('#Datepicker2').datetimepicker(
+            {
+                format: 'DD.MM.YYYY'
+            }
+        );
+
+        // $('input.flat').iCheck({
+        //     checkboxClass: 'icheckbox_flat-green'
+        // })
+        $('.AdminAPK').hide();
+        $('.AdminComplex').hide();
+        $('.RuckAPK').hide();
+        $('.RuckComplex').hide();
+        $('.RuckSubdiv').hide();
+        $('.Operator').hide();
+
+        function clearCheckBox(){
+            $('.flat:checked').prop('checked', false);
+            if($('.flat:checked').length < 1)
+            {
+                $('.accesscontrol_btn').hide();
+            }
+        }
+
+        $('.selectAccess').change(function() {
+            let currentIndex = $('.selectAccess')[0].selectedIndex;
+            if(currentIndex == 0){
+                clearCheckBox();
+                $('.AdminAPK').hide();
+                $('.AdminComplex').hide();
+                $('.RuckAPK').hide();
+                $('.RuckComplex').hide();
+                $('.RuckSubdiv').hide();
+                $('.Operator').hide();
+            }
+            if(currentIndex == 1){
+                clearCheckBox();
+                $('.AdminAPK').show();
+                $('.AdminComplex').hide();
+                $('.RuckAPK').hide();
+                $('.RuckComplex').hide();
+                $('.RuckSubdiv').hide();
+                $('.Operator').hide();
+            }
+            if(currentIndex == 2){
+                clearCheckBox();
+                $('.AdminAPK').hide();
+                $('.AdminComplex').show();
+                $('.RuckAPK').hide();
+                $('.RuckComplex').hide();
+                $('.RuckSubdiv').hide();
+                $('.Operator').hide();
+            }
+            if(currentIndex == 3){
+                clearCheckBox();
+                $('.AdminAPK').hide();
+                $('.AdminComplex').hide();
+                $('.RuckAPK').show();
+                $('.RuckComplex').hide();
+                $('.RuckSubdiv').hide();
+                $('.Operator').hide();
+            }
+            if(currentIndex == 4){
+                clearCheckBox();
+                $('.AdminAPK').hide();
+                $('.AdminComplex').hide();
+                $('.RuckAPK').hide();
+                $('.RuckComplex').show();
+                $('.RuckSubdiv').hide();
+                $('.Operator').hide();
+            }
+            if(currentIndex == 5){
+                clearCheckBox();
+                $('.AdminAPK').hide();
+                $('.AdminComplex').hide();
+                $('.RuckAPK').hide();
+                $('.RuckComplex').hide();
+                $('.RuckSubdiv').show();
+                $('.Operator').hide();
+            }
+            if(currentIndex == 6){
+                clearCheckBox();
+                $('.AdminAPK').hide();
+                $('.AdminComplex').hide();
+                $('.RuckAPK').hide();
+                $('.RuckComplex').hide();
+                $('.RuckSubdiv').hide();
+                $('.Operator').show();
+            }
+
+        })
+
+        $('.flat').each(function( index){
+            $(this).on('click', function() {
+                if($(this).is(':checked')){
+                    if($('.flat:checked').length > 0){
+                        console.log('поставили');
+                        $('.accesscontrol_btn').show();
+                    }
+                } else {
+                    if($('.flat:checked').length < 1)
+                    {
+                        console.log('убрали');
+                        $('.accesscontrol_btn').hide();
+                    }
+                    
+                }
+            })
+        })
+
+
+    
+
+        //         var theTemplateScript = $("#userData").html();
+
+        // //   var theTemplate = Handlebars.compile(theTemplateScript);
+        // //   $(document.body).append(theTemplate(theData));
+
+        //         // var source = document.getElementById("userData");
+        //         console.log(theTemplateScript);
+        
+        
+        
+        // let template = Handlebars.compile(user);
+        // let html = template(users);
+        // let html = template({users: users});
+        // // $('.test').append(template(context));
+        // $('#test').html(html);
+
+        // myTable.clear();
+        // $('#datatable1').dataTable().fnClearTable();
+        // $('#datatable1').dataTable().fnAddData();
+        let socket = io("http://192.168.1.25:8000");
+        socket.emit('hello', 'textqqq');
+        socket.on('user', function(users) {
+        console.log(users);
+        toastr.success(users);
+        
+        
+        // let template = Handlebars.compile(test);
+        // myTable.draw();
+        // oTable.fnAddData(users)
+        // oTable.fnAddData('1')
+
+        
+        // $('#test').append(template({users: currentJSON}));
+//   var theTemplate = Handlebars.compile(theTemplateScript);
+//   $(document.body).append(theTemplate(theData));
+
+        // var source = document.getElementById("userData");
+        
+        // var template = Handlebars.compile(source);
+        // let context = {users: users};
+        // let html = template(context)
+        // console.log(users);
+        // console.log(typeof(users));
+        // const user1 = JSON.stringify(users)
+        // console.log(users1);
+        // console.log(document.getElementById("userData").innerHTML);
+        // let context = {user: `${users}`};
+        // console.log('context', context);
+        // console.log($('#userData').html());
+        // var template = Handlebars.compile( $('#userData').html() )
+        // // let template = Handlebars.compile(user);
+        // // let html = template(users);
+        // let html = template({users: users});
+        // // $('.test').append(template(context));
+        // $('#test').html(html);
+    });
+    });
+
+</script>
+
+
 
 </html>

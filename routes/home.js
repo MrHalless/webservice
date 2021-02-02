@@ -10,7 +10,11 @@ router.get('/', checkAuth, (req, res) => {
     settings: req.session.settings,
     success: req.flash('success'),
   });
+<<<<<<< HEAD
   console.log("11", req.ntlm)
+=======
+  console.log("11",req.ntlm)
+>>>>>>> master
 });
 
 router.post('/', checkAuth, (req, res) => {

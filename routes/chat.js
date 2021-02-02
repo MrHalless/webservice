@@ -3,6 +3,7 @@ const router = Router();
 const checkAuth = require('../middleware/checkAuth');
 const { checkAccess } = require('../middleware/checkAccess');
 
+<<<<<<< HEAD
 router.get('/', checkAuth, async (req, res) => {
   const flag = await checkAccess(req);
   if (flag === false) {
@@ -21,6 +22,13 @@ router.get('/', checkAuth, async (req, res) => {
       });
     }
   }
+=======
+router.get('/', checkAuth, (req, res) => {
+  res.render('chat', {
+    title: 'Главная страница',
+    login: req.session.user,
+  });
+>>>>>>> master
 });
 
 module.exports = router;

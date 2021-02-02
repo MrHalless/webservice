@@ -5,7 +5,16 @@ const exphbs = require('express-handlebars');
 
 const flash = require('connect-flash');
 const csrf = require('csurf');
+<<<<<<< HEAD
 // const redis = require('redis');
+=======
+// const { body } = require('express-validator/check');
+// const fs = require('fs');
+// const toastr = require('express-toastr');
+const cookieParser = require('cookie-parser');
+// const ntlm = require('express-ntlm');
+// const nodeSSPI = require('node-sspi');
+>>>>>>> master
 
 // const { body } = require('express-validator/check');
 // const fs = require('fs');
@@ -54,6 +63,7 @@ const errorRoutes = require('./routes/error');
 const sharedSession = require('express-socket.io-session');
 const varMiddleware = require('./middleware/variable');
 const keys = require('./keys/keys');
+<<<<<<< HEAD
 const {
   MONGODB_URI
 } = require('./keys/keys');
@@ -88,6 +98,19 @@ require('./middleware/socket')(io);
 
 // app.set('socketio', socketIO);
 
+=======
+const { MONGODB_URI } = require('./keys/keys');
+const { hashSync } = require('bcryptjs');
+const PORT = process.env.PORT || 8000;
+
+const http = require('http');
+const app = express();
+const server = http.createServer(app);
+const socketIO = require('socket.io')(server);
+app.set('socketio', socketIO);
+module.exports.io = socketIO;
+require('./middleware/socket');
+>>>>>>> master
 
 // ? создание handelbars
 const hbs = exphbs.create({
@@ -97,7 +120,10 @@ const hbs = exphbs.create({
 });
 const Session = require('express-session');
 
+<<<<<<< HEAD
 const MongoStore = require('connect-mongodb-session')(Session);
+=======
+>>>>>>> master
 const store = new MongoStore({
   collection: 'sessions',
   uri: MONGODB_URI,
@@ -134,6 +160,7 @@ app.use(express.urlencoded({
 
 app.use(cookieParser('secret code dude'));
 
+<<<<<<< HEAD
 // socketIO.configure(function() {
 //   socketIO.set('authirization', function(data,accept))
 // })
@@ -162,6 +189,30 @@ app.use(cookieParser('secret code dude'));
 // socketIO.use(sharedSession(session, {
 //   autoSave: true
 // }))
+=======
+app.use(
+  session({
+    secret: 'secret code dude',
+    key: 'user_sid',
+    resave: true,
+    saveUninitialized: false,
+    unset: 'destroy',
+    rolling: true,
+    cookie: {
+      maxAge: 30000,
+    },
+    store,
+  }),
+  function (req, res, next) {
+    let num = req.session.cookie.maxAge;
+
+    // req.session.cookie.maxAge = null;
+    console.log(num);
+    next();
+  }
+);
+
+>>>>>>> master
 // ! регистрация пакетов
 app.use(csrf());
 app.use(flash());
@@ -178,10 +229,13 @@ app.use('/journal_apk', journal_apkRoutes);
 app.use('/journal_complex', journal_complexRoutes);
 app.use('/journal_subdiv', journal_subdivRoutes);
 app.use('/journal_operator', journal_operatorRoutes);
+<<<<<<< HEAD
 app.use('/statistic_apk', statistic_apkRoutes);
 app.use('/statistic_complex', statistic_complexRoutes);
 app.use('/statistic_subdiv', statistic_subdivRoutes);
 app.use('/statistic_operator', statistic_operatorRoutes);
+=======
+>>>>>>> master
 app.use('/laguagepairs', laguagePairsRoutes);
 app.use('/pms', pmsRoutes);
 app.use('/servers', serversRoutes);
@@ -202,8 +256,12 @@ app.use('/serverlog', serverLog);
 app.use('/index', homeRoutes);
 app.use('/', authRoutes);
 app.use('/logout', authRoutes);
+<<<<<<< HEAD
 app.use('/subdiv', subdivRoutes);
 app.use('/error', errorRoutes);
+=======
+
+>>>>>>> master
 // io.on('connection', function (socket) {});
 
 // app.use(function (req, res, next) {
