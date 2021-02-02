@@ -3,6 +3,7 @@ const router = Router();
 const checkAuth = require('../middleware/checkAuth');
 const { checkAccess } = require('../middleware/checkAccess');
 
+<<<<<<< HEAD
 
 router.get('/', checkAuth, async (req, res) => {
   const flag = await checkAccess(req);
@@ -23,6 +24,15 @@ router.get('/', checkAuth, async (req, res) => {
       res.redirect('/error');
     }
   }
+=======
+router.get('/', checkAuth, (req, res) => {
+  res.render('translate', {
+    title: 'Главная страница',
+    login: req.session.user,
+    success: req.flash('success'),
+    error: req.flash('error'),
+  });
+>>>>>>> master
 });
 
 module.exports = router;

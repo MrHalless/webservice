@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const {
   Schema,
   model
@@ -16,6 +17,31 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+=======
+const { Schema, model } = require('mongoose');
+
+const userSchema = new Schema({
+  //   name: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   surname: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   patronymic: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   code: {
+  //     type: String,
+  //     required: false,
+  //   },
+  //   server: {
+  //     type: String,
+  //     required: true,
+  //   },
+>>>>>>> master
   login: {
     type: String,
     required: true,
@@ -49,6 +75,7 @@ const userSchema = new Schema({
     required: true,
     enum: ['Доменная', 'Локальная'],
   },
+<<<<<<< HEAD
   city: {
     type: String,
     required: true,
@@ -98,3 +125,16 @@ const userSchema = new Schema({
 });
 
 module.exports = model('User', userSchema);
+=======
+  //   access: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   language_form: {
+  //     type: String,
+  //     required: true,
+  //   },
+});
+
+module.exports = model('User', userSchema);
+>>>>>>> master

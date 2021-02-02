@@ -9,6 +9,13 @@ const complexSchema = new Schema({
     type: String,
     required: true,
   },
+<<<<<<< HEAD
+=======
+  military: {
+    type: String,
+    required: true,
+  },
+>>>>>>> master
 });
 
 module.exports = model('Complex', complexSchema);

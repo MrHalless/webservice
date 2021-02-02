@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 const {
   Schema,
   model
 } = require('mongoose');
+=======
+const { Schema, model } = require('mongoose');
+>>>>>>> master
 
 const serverSchema = new Schema({
   complex: {
@@ -13,7 +17,14 @@ const serverSchema = new Schema({
     required: true,
   },
 
+<<<<<<< HEAD
 
+=======
+  military: {
+    type: String,
+    required: true,
+  },
+>>>>>>> master
 
   name: {
     type: String,
@@ -27,6 +38,7 @@ const serverSchema = new Schema({
     type: String,
     required: true,
   },
+<<<<<<< HEAD
   languages: [{
     first: {
       type: String,
@@ -48,3 +60,12 @@ const serverSchema = new Schema({
 });
 
 module.exports = model('Server', serverSchema);
+=======
+  languages: {
+    type: Object,
+    required: true,
+  },
+});
+
+module.exports = model('Server', serverSchema);
+>>>>>>> master
